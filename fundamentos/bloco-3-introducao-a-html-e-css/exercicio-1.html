@@ -3,11 +3,47 @@
     <head> <!--config.e inf.ocultas/caminhoprocss,script,etc-->
         <meta charset="UTF-8"> <!--conj.d caract.emportug.-->
         <title>Aprendendo HTML</title> <!--inf.naabadonav.-->
+       <style> 
+      
+      h3 {
+           color: brown;
+           font-size: 1.5em;
+           font-style: italic;
+       } 
+      body {
+           background-color: rgb(89, 121, 223);
+           font-size: 16px;
+       }
+       p {
+           font-family: monospace, sans-serif;
+       } 
+       #foto-praia {
+           background-color: green;
+           color: white;
+       }
+       #título-aprendizado {
+           color: yellow;
+           text-decoration: underline;
+       }
+       .pessoas {
+           background-color: royalblue;
+           color: white;
+       }
+       .tabela1 {
+           font-weight: bold;
+           line-height: 30px;
+       }
+       .formação{
+           text-align: center;
+       }
+
+       </style>
     </head> <!--fechamento do head-->
+    
     <body> <!--corpo da página-->
         <h1>Aprendizados</h1> <!--Título maior vai até h6-->
         
-        <h2>Meu aprendizado começa aqui e agora!</h2>
+        <h2 id="título-aprendizado">Meu aprendizado começa aqui e agora!</h2>
         
         <p><em>Hoje eu começo minha jornada na Trybe!</em> 
         <br> <!-- <p> parágrafo-->
@@ -22,7 +58,7 @@
         
         <h3>O que irei aprender neste início?</h3>  
         
-        <ul> <!-- estrutura de lista <ol> com numero-->
+        <ul class="tabela1"> <!-- estrutura de lista <ol> com numero-->
             <li>HTML 
                 <p><a href="#tags">Primeiras Tags;</a> <a href="#imagens">Inserir imagens;</a></p></li>
             <li>CSS </li> <!-- <li> itens da lista -->
@@ -34,7 +70,7 @@
         </ul>
         <hr>
         
-        <h3 id="#tags">Primeiras Tags</h3>
+        <h3 id="tags">Primeiras Tags</h3>
         
         <p>Aprendi a usar estas até aqui: h1,hr,p,br,em,strong,ul,img</p>
         <hr>
@@ -44,27 +80,27 @@
         <img src="https://assets-global.website-files.com/61549abf6fb9ca5e91bc5709/61549abf6fb9ca5446bc574a_Group%252013-p-800.png" width="350px"
         alt="Foto capa betrybe.com">
         
-        <p><em>"Esta foto é de exemplo, deve ter uma descrição são duas pessoas  que devem trabalhar na Trybe."</em></p>
+        <p id="foto-praia"><em>"Esta foto é de exemplo, deve ter uma descrição são duas pessoas  que devem trabalhar na Trybe."</em></p>
         
-        <h4>Pessoas número 1 e 2
+        <h4 class="pessoas">Ana e Thiago
             <br>Trabalham na Trybe - BH</h4>
         <img src="imagens/selfwhats.JPG" width="350px" height="234" 
         alt="Self Whats Giorge"> 
         <!--<img+scr="">imgporimagem widthtaman./larg. alt descrição-->
         
-        <p><em>"Já esta foto sou eu em uma praia da Ilha de Itaparica, não me lembro o nome da praia mas é paradisíaca."</em></p>
+        <p id="foto-praia"><em>"Já esta foto sou eu em uma praia da Ilha de Itaparica, não me lembro o nome da praia mas é paradisíaca."</em></p>
         
-        <h4>Edgard Giorge
+        <h4 class="pessoas">Edgard Giorge
             <br>Aluno Tryber - Turma XP</h4>
         <hr>
         
-        <h4>Como é a formação?</h4>
+        <h3>Como é a formação?</h3>
 
         <p>Ensino alinhado ao mercado, aprendizado mão na massa 
             e conhecimento que te prepara para o trabalho.</p>
         <img src="https://assets-global.website-files.com/61549abf6fb9ca5e91bc5709/61549abf6fb9ca92cdbc5774_Group%252049-p-800.png" width="400x" alt="Mulher da Trybe de preto">
        
-        <h4>Quer saber mais sobre a formação da Trybe</h4>
+        <h4 class="formação">Quer saber mais sobre a formação da Trybe</h4>
 
         <a href="https://www.betrybe.com/formacao" target="_blanck">Programa de Formação</a>
         <!--a cria link href="" ref. target abre nova aba-->
