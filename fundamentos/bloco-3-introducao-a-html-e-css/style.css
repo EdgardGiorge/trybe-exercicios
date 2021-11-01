@@ -1,0 +1,76 @@
+      
+       
+   body {
+       font-family: monospace, sans-serif;
+       background-color: rgb(141, 160, 223);/*#61a5c2;*/
+        font-size: 16px;
+    }
+    h2 {
+        color: rgb(36, 60, 197);
+        line-height: 30px;
+        font-weight: 600;
+        font-size: 2em;
+    }
+    p {
+        font-style: italic;
+    }
+    ul {
+        font-family: 'Prompt', sans-serif;
+    } 
+    .sublinhar{
+        text-decoration: underline;/*sublinha*/
+    }
+    .negrito{
+        font-weight: bold;
+    }
+    .título-aprendizados {
+        color: rgb(11, 38, 192);
+        line-height: 55px;
+        font-weight: 600;
+        font-size: 45px                 
+    } 
+    .títulos-outros{
+        color: rgb(41, 68, 223);
+        line-height: 30px;
+        font-weight: 600;
+        font-size: 28px;
+        text-align: center;
+    }
+    .cor-de-titulos {
+        color:rgb(41, 68, 223);        
+    }
+    .tabela1 {
+        font-weight: bold; /*negrito*/
+        line-height: 30px; /*espaçamento entre as linhas*/
+    }
+    .picture{
+        border-radius: 50%; 
+        width: 200px;/*tamanho da foto*/       
+
+    }
+    .descrição-pessoas { /*chama id*/
+        background-color: green;
+        color: white;
+    }
+    .nome-pessoas {  /*classe*/
+        background-color: royalblue;
+        color: white;
+    }
+    .formação{
+        text-align: center; /*centraliza*/
+    }
+    .button {
+        background-color: royalblue;
+        color: white;
+        padding: 10px 30px;/*preenche borda*/ 
+        font-weight: 600;/*larg.da fonte*/
+        text-decoration: none;
+        border-radius: 6px;
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+    }
+    .button:hover{
+        background-color: rgb(36, 60, 197);
+    }
+    
