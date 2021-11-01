@@ -31,7 +31,7 @@
     } 
     .títulos-outros{
         color: rgb(41, 68, 223);
-        line-height: 30px;
+        line-height: 30px; /*espaçamento entre as linhas*/
         font-weight: 600;
         font-size: 28px;
         text-align: center;
@@ -41,15 +41,15 @@
     }
     .tabela1 {
         font-weight: bold; /*negrito*/
-        line-height: 30px; /*espaçamento entre as linhas*/
+        line-height: 30px; /*altura das linhas*/
     }
     .picture{
-        border-radius: 50%; 
+        border-radius: 60%; 
         width: 200px;/*tamanho da foto*/       
 
     }
     .descrição-pessoas { /*chama id*/
-        background-color: green;
+        background-color: rgb(101, 132, 223); 
         color: white;
     }
     .nome-pessoas {  /*classe*/
@@ -66,7 +66,7 @@
         font-weight: 600;/*larg.da fonte*/
         text-decoration: none;
         border-radius: 6px;
-        width: 200px;
+        width: 200px; /*largura*/
         display: block;
         margin: 20px auto;
     }
