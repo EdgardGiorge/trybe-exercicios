@@ -1,0 +1,13 @@
+h1, p { /*O texto das tags 'h1' e 'p' estejam centralizados.*/
+    text-align: center;
+}
+li:hover { /*A cor de fundo da sua lista mude quando o cursor estiver sobre o item.*/
+   background-color: blue; 
+   
+}
+li:active { /*A fonte do item mude quando ele for clicado.*/
+    color: white;
+}
+li {
+    list-style:none; /*adicione a propriedade 'list-style: none' para ambas as listas, o "ponto da lista " fica branco quando passa o mouse*/
+}
