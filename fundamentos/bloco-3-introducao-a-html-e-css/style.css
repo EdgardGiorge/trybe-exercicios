@@ -11,8 +11,9 @@
         font-weight: 600;
         font-size: 2em;
     }
-    p {
+    p, a {
         font-style: italic;
+        text-decoration: none;
     }
     ul {
         font-family: 'Prompt', sans-serif;
@@ -43,10 +44,17 @@
         font-weight: bold; /*negrito*/
         line-height: 30px; /*altura das linhas*/
     }
-    .picture{
+    .mouse-tabela:hover {
+        color: white;
+        font-weight: bold;
+    }
+    a.mouse-tabela {
+        color: brown;
+    }
+    .picture {
         border-radius: 60%; 
-        width: 200px;/*tamanho da foto*/       
-
+        width: 200px;/*tamanho da foto*/
+        height: 150px;
     }
     .descrição-pessoas { /*chama id*/
         background-color: rgb(101, 132, 223); 
@@ -63,12 +71,11 @@
         background-color: royalblue;
         color: white;
         padding: 10px 30px;/*preenche borda*/ 
-        font-weight: 600;/*larg.da fonte*/
-        text-decoration: none;
+        font-weight: 600;/*larg.da fonte, pode ser negrito(bold)*/
         border-radius: 6px;
         width: 200px; /*largura*/
-        display: block;
-        margin: 20px auto;
+        display: block; /*Fala que o link é um bloco*/
+        margin: 20px auto; /*Coloca margem dos lados neste caso 20 em cima e embaixo e as laterais margens iguais, consequentimente alinha o link*/
     }
     .button:hover{
         background-color: rgb(36, 60, 197);
