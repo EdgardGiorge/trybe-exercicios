@@ -1,0 +1,99 @@
+.fixar-título{
+    position: fixed;
+    z-index: 6;
+    background-color: darkturquoise;
+    left: 0%;
+    top: 0%;
+    margin: 0%
+     
+    
+}
+.super-mario {
+    width: 200px;
+    height: 180px;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+}
+
+.goomba {
+    width: 80px;
+    height: 80px;
+    top: 70px;
+    left: 190px;
+    position: absolute;
+    z-index: 3;
+    
+}
+.bowser {
+    width: 200px;
+    height: 180px;
+    position: absolute;
+    top: 60px; 
+    left: 260px;    
+    z-index: 2;
+    
+
+}   
+
+
+  
+.speach {
+    font-size: 25px;
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    z-index: 5;    
+}
+.baloon {
+    height: 180px; 
+    position: absolute;
+    top: 230px;
+    z-index: 4; 
+    
+}
+.teste-texto {
+   top: 420px;
+   position: absolute;
+
+
+}
+.selfwhats {
+    border-radius: 50%;
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+
+}
+.foto-tamanho {
+    float: left;
+    margin-right: 10px;
+    width: 280px;
+    
+
+}
+.style-tags {
+    color: blue;
+    font-weight: bold;
+    font-family: 'Prompt', monospace;
+    font-style: italic;
+}
+.edição-parágrafo {
+    position: absolute;
+    top: 600px;
+    width: 80%; /*300px;*/
+    height: 250px;
+    overflow: auto;
+      
+     
+}
+.próximo{
+    position: absolute;
+    top: 850px;
+    
+    
+    
+}
+
+       
+   
