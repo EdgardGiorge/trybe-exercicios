@@ -27,7 +27,30 @@
         <p>height: 300px; ,limita a altura do texto/conteúdo (espreme o texto em um ponto), dai você terá que usar um overflow pra criar scroll</p>
         <p>overflow: auto; ,ele cria um scroll pra ter acesso ao texto oculto, overflow: hidden; ,deixa o texto oculto apenas, overflow-y: auto; + overflow-x= auto; cria scroll na vertical e horizontal ,overflow-y: auto; + overflow-x= hidden; ,elimina o scroll horizontal</p>
     </div>
-        <p class="próximo">PRÓXIMO CONTEÚDO</p>
+        <p class="próximo">Box Model - Modelo de caixas no CSS <br>
+          Nesse vídeo você pôde ver algumas propriedades muito importantes do CSS em ação: display , overflow , height e width ! Mas você sabe porque elas fazem o que fazem?
+          Para ter um domínio melhor sobre o tema iremos entrar de cabeça em como funcionam os blocos do CSS que montam visualmente as páginas web e vamos aprender sobre o famoso Box Model , um dos conceitos fundamentais do CSS!<br>
+          O que é o Box Model? <br>
+          A primeira coisa que temos que deixar bem explícita é que todos os elementos HTML são renderizados como caixas pelo browser. Por isso nós usamos o termo "box model" ou "modelo de caixas" quando nos referimos a essa forma de renderização e, por tabela, quando falamos de alguns elementos do layout. <br>
+          Nos conteúdos desse bloco, você já utilizou HTML e CSS para criar e estilizar uma página web, então, mesmo sem saber, você já está usando o modelo de caixas para organizar o seu trabalho! <br>
+          Só para exemplificar, se você utilizou a propriedade CSS background-color em algum dos elementos do seu portfólio web, você certamente percebeu que a cor de fundo foi aplicada não apenas à área diretamente atrás do elemento html, mas também em uma pequena área ao seu redor. Isso acontece porque quando você muda a cor de fundo de um elemento você está colorindo toda a caixa em que ele está contido! <br>
+          width e height <br>
+          Especificam, respectivamente, a largura e a altura da área de conteúdo, desconsiderando as bordas, margens e padding.<br>
+          padding<br>
+          Pode ser traduzido como "enchimento" e controla a quantidade de espaço vazio entre o conteúdo em si e a borda da caixa.<br>
+          Ele pode ser pensado como se fosse o "plástico bolha" ao redor do conteúdo, e o seu uso, por padrão, aumenta o tamanho total do elemento, enchendo a caixa e fazendo com que ela precise ser maior que as dimensões do conteúdo.<br>
+          Tenha isso em mente quando for balancear a altura e a largura, afinal, uma caixa precisa ser maior que as dimensões do conteúdo quando ele está coberto com plástico bolha, não é mesmo?<br>
+          border<br>
+          É a borda da caixa, pura e simples. A propriedade border em si é considerada uma shorthand , ou seja, ela serve como um atalho para controlar um conjunto de outras propriedades que poderiam ser definidas individualmente, nesse caso border-width , border-style , e border-color !<br>
+          border-width : também pode controlar a largura da borda e o seu valor inicial é medium .<br>
+          border-style : essa propriedade controla o estilo da linha e tem como valor inicial none . Por isso que você não consegue ver nenhuma borda se não alterar essa propriedade !
+          border-color : essa propriedade controla a cor da borda, e tem como valor inicial currentcolor . Esse valor define a cor da borda como sendo o mesmo do elemento, então na maioria dos casos é desejável modificá-la.<br>
+          margin<br>
+          A margem funciona como um tipo de "campo de força" que expande o elemento para além das suas dimensões visíveis. Ela fica do lado de fora da borda e não é afetada pela estilização do elemento, servindo mais para manejar o afastamento entre as caixas. Ainda assim, não esqueça que a margem faz parte da caixa dentro do box model !<br><br><br>
+          Posicionamento de Elementos <br><br>
+          Posicionar elementos é importante e nos abre uma gama de possibilidades para estilizar uma página, movendo elementos utilizando propriedades como top e left . Foi possível observar também a propriedade absolute , que permite posicionar qualquer elemento de acordo com o elemento pai que tenha um position diferente. E por fim, vimos o z-index , que estabelece as camadas em que o objeto irá se posicionar, e o float , que lhe possibilita empurrar um elemento para a esquerda ou para a direita da página, permitindo que outras estruturas possam se organizar em torno dele.
+
+        </p>
 
         
 
