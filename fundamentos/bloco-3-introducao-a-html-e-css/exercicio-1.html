@@ -10,24 +10,25 @@
     </head> <!--fechamento do head-->
     
     <body> <!--corpo da página-->
-        <h1 class="título-aprendizados">Edgard Giorge</h1> <!--Título maior vai até h6-->
-        
-        <h2>Meu aprendizado começa aqui e agora!</h2>
-        
-        <p>Hoje eu começo minha jornada na Trybe! 
-        <br> <!-- <p>parágrafo,<em>itálico+semântico,<br>pula-linha-->
-        Com muito<span class="cor-de-titulos negrito"> esforço e apoio</span>  
-         vou me tornar uma pessoa <!-- <strong> negrito-->
-        <span class="cor-de-titulos negrito">desenvolvedora</span> muito capaz! <br>
-        Esta época só de pria ficou pra tráz!</p>
-        
-        <img src="imagens/selfwhats.JPG" width="350px" 
-        alt="Self Whats Giorge">
-            
-        <h3 class="títulos-outros sublinhar">O que irei aprender neste início?</h3>  
+        <div class="header">
+            <div class="header-container">
+                <h1 class="título-edgard-giorge">Edgard Giorge</h1> <!--Título maior vai até h6-->
+                
+                <h2>Meu aprendizado começa aqui e agora!</h2>
+                
+                <p class="header-container">Estou começando minha jornada na Trybe! 
+                <br> <!-- <p>parágrafo,<em>itálico+semântico,<br>pula-linha-->
+                Com muito<span class="cor-de-titulos negrito"> esforço e apoio</span>  
+                vou me tornar uma pessoa <!-- <strong> negrito-->
+                <span class="cor-de-titulos negrito">desenvolvedora</span> muito capaz! <br>
+                Esta época só de pria ficou pra tráz!</p>
+            </div>
+        </div>
+                 
+        <h3 class="títulos-outros sublinhar"><a href="#o-que-aprender"  class="mouse-tabela">O que irei aprender neste início?</a></h3>  
         
         <ul class="tabela1"> <!-- estrutura de lista <ol> com numero-->
-            <li class="mouse-tabela">HTML 
+            <li class="mouse-tabela" id="o-que-aprender">HTML 
                 <p><a href="#primeiras-tags" class="mouse-tabela">Primeiras Tags;</a> <a href="#inserir-imagens" class="mouse-tabela">Inserir imagens;</a></p></li>
             <li class="mouse-tabela">CSS </li> <!-- <li> itens da lista -->
             <li class="mouse-tabela">Posicionamento em CSS</li>
@@ -42,32 +43,41 @@
         
         <p>Aprendi a usar estas até aqui: h1,hr,p,br,em,strong,ul,img,span,div.</p>
         
-        
-        <h3 id="inserir-imagens" class="títulos-outros">Inserir Imagens</h3>
-        <h4>Aproveito também este espaço pra falar da minha trajetória!</h4>
-
-        <img src="imagens/telecom.jpeg" alt="Foto Telecom" class="picture">
-        
-        <p class="descrição-pessoas">"Desenvolvi 18 anos em atividades de Telecomunicações(implantação e manutenção), trabalhando em grandes empresas do setor como Ericsson Claro e Tim."</p>
-        
-        <h4 class="nome-pessoas">Giorge "Telecom"
-            <br>De 1998 à 2016</h4>
-        
-        <img src="imagens/drone.jpeg" alt="Foto drone"  class="picture"> 
-        <!--<img+scr="">imgporimagem widthtaman./larg. alt descrição-->
-        
-        <p class="descrição-pessoas">"Empreendendo no ramo de imagens aéreas, fundei a Alfa Drones, conquistando clientes importantes como Tv Record, Play Art, LG, Sesc e Usiminas."</p>
-        
-        <h4 class="nome-pessoas">Giorge "Piloto"
-            <br>De 2014 à 2018</h4>
-            <img src="imagens/mercado-financeiro.jpeg" alt="Foto drone" height="150px" class="picture"> 
-            <!--<img+scr="">imgporimagem widthtaman./larg. alt descrição-->
+        <div class="market">          
+            <h3 id="inserir-imagens" class="títulos-outros">Inserir Imagens</h3>
+            <div class="market-test"><h4>Aproveito também este espaço pra falar da minha trajetória!</h4></div>
             
-            <p class="descrição-pessoas">"Desde 2016 aplicando habilidades gestão de patrimônio, análise de mercado, negociação e foco no cliente, educação financeira em Day-Trade."</p>
+            <div class="trajetória">
+                <div class="trajetória-container">
+                <img src="imagens/telecom.jpeg" alt="Foto Telecom" class="picture">
+                
+                <p class="descrição-profissão">"Desenvolvi 18 anos em atividades de Telecomunicações(implantação e manutenção), trabalhando em grandes empresas do setor como Ericsson Claro e Tim."</p>
+                    
+                <h4 class="nome-profissão">Giorge "Telecom"
+                <br>De 1998 à 2016</h4>
+                </div>
+                
+                <div class="trajetória-container">
+                <img src="imagens/drone.jpeg" alt="Foto drone"  class="picture"> 
+                <!--<img+scr="">imgporimagem widthtaman./larg. alt descrição-->
+                
+                <p class="descrição-profissão">"Empreendendo no ramo de imagens aéreas, fundei a Alfa Drones, conquistando clientes importantes como Tv Record, Tv Bandeirantes, Play Art, LG, Sesc e Usiminas."</p>
+                
+                <h4 class="nome-profissão">Giorge "Piloto"
+                <br>De 2014 à 2018</h4>
+                </div>    
             
-            <h4 class="nome-pessoas">Giorge "Trader"
-                <br>De 2016 à 2021</h4>
-        
+                <div class="trajetória-container">    
+                <img src="imagens/mercado-financeiro.jpeg" alt="Foto mercado-financeiro" height="150px" class="picture"> 
+                <!--<img+scr="">imgporimagem widthtaman./larg. alt descrição-->
+                
+                <p class="descrição-profissão">"Desde 2016 aplicando habilidades gestão de patrimônio, análise de mercado, negociação e foco no cliente, educação financeira em Day-Trade."</p>
+                
+                <h4 class="nome-profissão">Giorge "Trader"
+                    <br>De 2016 à 2021</h4>
+                </div>
+            </div>
+        </div>
         
         <h3 class="títulos-outros">Como é a formação?</h3>
 

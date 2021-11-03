@@ -1,4 +1,7 @@
-      
+    * { /*deixa a a margem e padding tudo 0*/
+        margin: 0;
+        padding: 0;
+    }  
        
    body {
        font-family: monospace, sans-serif;
@@ -10,6 +13,7 @@
         line-height: 30px;
         font-weight: 600;
         font-size: 2em;
+        margin-bottom: 30px;
     }
     p, a {
         font-style: italic;
@@ -24,11 +28,12 @@
     .negrito{
         font-weight: bold;
     }
-    .título-aprendizados {
+    .título-edgard-giorge {
+        margin-bottom: 10px;
         color: rgb(11, 38, 192);
         line-height: 55px;
         font-weight: 600;
-        font-size: 45px                 
+        font-size: 45px                        
     } 
     .títulos-outros{
         color: rgb(41, 68, 223);
@@ -43,24 +48,25 @@
     .tabela1 {
         font-weight: bold; /*negrito*/
         line-height: 30px; /*altura das linhas*/
+        margin-left: 40px;
     }
     .mouse-tabela:hover {
         color: white;
         font-weight: bold;
     }
     a.mouse-tabela {
-        color: brown;
+        color: rgb(41, 68, 223);
     }
     .picture {
         border-radius: 60%; 
         width: 200px;/*tamanho da foto*/
         height: 150px;
     }
-    .descrição-pessoas { /*chama id*/
+    .descrição-profissão { /*chama id*/
         background-color: rgb(101, 132, 223); 
         color: white;
     }
-    .nome-pessoas {  /*classe*/
+    .nome-profissão {  /*classe*/
         background-color: royalblue;
         color: white;
     }
@@ -80,4 +86,45 @@
     .button:hover{
         background-color: rgb(36, 60, 197);
     }
+    .header { /* Criei a classe pra colocar a foto de fundo*/
+        background-image: url(imagens/selfwhats.JPG);
+        background-size: cover; /*tamanho de capa*/
+        height: 500px; /*usa a altura pra dimensionar a foto*/
+        background-position: 0 10%; /*ajusta a imagem*/
+        padding: 25px 30px 40px 10px; /* ajuste padding*/
+        margin-bottom: 60px; /*aumenta margem de baixo*/
+        
+    }
+    .header-container {
+        max-width: 60%; /*largura do texto*/
+        margin-left: 40px; /*40px a esquerda da borda*/
+    }
+    p.header-container {
+        margin-left: 0px;
+        max-width: 80%;
+        font-size: 20px;
+    }
+    .market {
+        padding: 60px 30px;
+        text-align: center;
+    }
+    .market-test {
+        max-width: 60%;
+        margin: 20px auto;
+    }
+    .trajetória {
+        width: 80%;
+        padding: 30px 70px 90px 70px;
+        margin:auto;
+    }
+    .trajetória-container {
+        display: inline-block; /*trata o elem.comoumblocoe mantém alinhado com os outros*/
+        width: 30%; /*este tamanho deixou os 3 alinhados*/
+        margin: 10px; /* entre os containers bloco/profissão*/
+        /*vertical-align: bottom; não precisou mas alinhava pra baixo*/ 
+    }
+    .trajetória-container p {
+        margin: 10px 0 0 0; /*espaço entre a foto e a escrita*/
+    }
+    
     
