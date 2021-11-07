@@ -1,0 +1,53 @@
+h1 {
+    text-align: center;
+   
+ }
+
+  .first {
+    background-color: rgb(235, 200, 84);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    display: block; /* + margin: auto ,centraliza o bloco */
+    
+    
+         
+  }
+
+  .second {
+    background-color: rgb(219, 219, 219);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    display: inline-block; /* deixa o bloco em linha + margin left ... centraliza */
+    margin-left: 350px; 
+    
+  
+     
+   
+           
+  }
+
+  .third {
+    background-color: rgb(170, 142, 106);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    display:inline-block;   /* pra alinhar com o bloco de cima */
+              
+  }
+  .podio  {
+   display: inline; /* transforma um elemento nat de bloco pra linha*/
+      
+  }
+  .premiacao {
+      text-align: center; /* alinha todo o conteúdo section */
+  
+  }
+  .premiacao li {
+      display: inline; /* alinha todos os conteúdos li */
+  }
