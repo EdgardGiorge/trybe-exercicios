@@ -341,5 +341,3 @@
 // }
 // console.log(verificaFimPalavra('trybe', 'be')); //true
 // console.log(verificaFimPalavra('joaofernando', 'fernan')); //false
-
-
