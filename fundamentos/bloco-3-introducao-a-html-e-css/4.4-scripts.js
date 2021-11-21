@@ -341,3 +341,32 @@
 // }
 // console.log(verificaFimPalavra('trybe', 'be')); //true
 // console.log(verificaFimPalavra('joaofernando', 'fernan')); //false
+
+//Bloco5 - JavaScript: DOM, Eventos e Web Storage
+
+//5.1 - Dom e Seletores
+
+//Seletores de elementos
+
+//Conteúdos
+//Exercício do conteúdo getElementById 
+// //1- Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito.
+// const paragraph = document.getElementById("paragraph");
+//   paragraph.style.color = "green";
+// console.log(document.getElementById('page-title').innerText = 'Love Actualy');
+// //2- Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+// console.log(document.getElementById('second-paragraph').innerText = 'Muito bom este filme');
+// //3- Por fim, recupere o subtítulo e altere-o também.
+// //console.log(document.getElementById('subtitle').innerText = 'Gênero = Romance Natalino');
+// //Exercício do conteúdo getElementsByTagName e ClassName
+
+//Exercício do conteúdo getElementByClassName e TagName
+// // 1- Adicione uma classe igual para os dois parágrafos. R. <p class='testeClasse'
+// //2- Recupere os seus parágrafos via código JavaScript , usando a função getElementsByClassName;
+// console.log(document.getElementsByClassName('testeClasse')[1].innerText);
+// //3- Altere algum estilo do primeiro deles.
+// let paragrafo1 = document.getElementsByClassName('testeClasse');
+// paragrafo1[0].style.color = 'red';
+// //4- Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName.
+// let subtitulo = document.getElementsByTagName('h4');
+// subtitulo[0].style.color = 'brown';
