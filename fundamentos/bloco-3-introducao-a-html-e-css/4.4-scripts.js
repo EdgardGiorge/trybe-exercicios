@@ -346,8 +346,7 @@
 
 //5.1 - Dom e Seletores
 
-//Seletores de elementos
-
+//Parte 2 - Seletores de elementos
 //Conteúdos
 //Exercício do conteúdo getElementById 
 // //1- Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito.
@@ -370,3 +369,19 @@
 // //4- Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName.
 // let subtitulo = document.getElementsByTagName('h4');
 // subtitulo[0].style.color = 'brown';
+//Parte III - Qual seletor usar?
+//Exercício do conteúdo Qual seletor usar
+// const emergencyTasks = document.getElementsByClassName('emergency-tasks')[0];
+// emergencyTasks.style.backgroundColor = 'rgb(255, 159, 132)';
+// const emergencyTasksHeaders = document.querySelectorAll('.emergency-tasks h3');
+// for (let index = 0; index < emergencyTasksHeaders.length; index += 1) {
+//   emergencyTasksHeaders[index].style.backgroundColor = 'rgb(165, 0, 243)';
+// }
+// const noEmergencyTasks = document.querySelector('.no-emergency-tasks');
+// noEmergencyTasks.style.backgroundColor = 'rgb(249, 219, 94)';
+// const noEmergencyTasksHeaders = document.querySelectorAll('.no-emergency-tasks h3');
+// for (let index = 0; index < noEmergencyTasksHeaders.length; index += 1) {
+//   noEmergencyTasksHeaders[index].style.backgroundColor = 'rgb(35, 37, 37)';
+// }
+// const footer = document.getElementById('footer-container');
+// footer.style.backgroundColor = 'rgb(0, 53, 51)';
