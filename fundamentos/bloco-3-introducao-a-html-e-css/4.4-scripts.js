@@ -385,3 +385,55 @@
 // }
 // const footer = document.getElementById('footer-container');
 // footer.style.backgroundColor = 'rgb(0, 53, 51)';
+
+//5.2 - Trabalhando com Seletores
+
+//Parte I - Buscando elementos
+//Conteúdos
+//Exercício do conteúdo buscando elementos
+// // 1. Acesse o elemento elementoOndeVoceEsta.
+//  let ondeVcEsta = document.getElementById('elementoOndeVoceEsta')
+// // 2- Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+//  let pai = ondeVcEsta.parentElement;
+//  pai.style.color = 'red';
+//  // 3- Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+//  let primeiroFilhoDoFilho = ondeVcEsta.firstElementChild; 
+//  primeiroFilhoDoFilho.innerText = 'primeiroFilhoDoFilho';
+//  // 4- Acesse o primeiroFilho a partir de pai.
+//  let primeiroFilho = pai.firstElementChild;
+//  // 5- Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+//  let primeiroFilho2 = ondeVcEsta.previousElementSibling;
+//  // 6- Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+//  let textElement = ondeVcEsta.nextSibling;
+//  // 7- Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+//  let terceiroFilho = ondeVcEsta.nextElementSibling;
+//  // 8- Agora acesse o terceiroFilho a partir de pai.
+//  let terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+ 
+ // Exercicio Parte II - Criando elementos
+//  // 1- Crie um irmão para elementoOndeVoceEsta.
+//  let pai1 = document.getElementById('pai');
+//  let irmaoElementoOndeVoceEsta = document.createElement('section');
+//  irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+//  pai1.appendChild(irmaoElementoOndeVoceEsta);
+//  // 2- Crie um filho para elementoOndeVoceEsta.
+//  let filhoElementoOndeVoceEsta = document.createElement('section');
+//  filhoElementoOndeVoceEsta.id = 'filhoelementoOndeVoceEsta';
+//  ondeVcEsta.appendChild(filhoElementoOndeVoceEsta);
+// // 3- Crie um filho para primeiroFilhoDoFilho.
+// let filhoPrimeiroFilhoDoFilho =  document.createElement('section');
+// filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+// primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+// //4- A partir desse filho criado, acesse `terceiroFilho`.
+// terceiroFilho2 = filhoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+
+//Exercícios Parte III - Removendo elementos 
+// // 1- Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho.
+// for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+//   const currentChildren = pai.childNodes[index];
+//   if (currentChildren.id !== 'elementoOndeVoceEsta') {
+//     currentChildren.remove();
+//   }
+// }
+// const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+// segundoEUltimoFilhoDoFilho.remove();
