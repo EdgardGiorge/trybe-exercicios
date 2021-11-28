@@ -344,7 +344,58 @@
 
 //Bloco5 - JavaScript: DOM, Eventos e Web Storage
 
-//5.1 - Dom e Seletores
+//5.1 - DOM E SELETORES
+//Aula ao vivo
+//console.log('oi! tudobem?')
+ // OBJETO WINDOW
+ // OBJETO DOCUMENT
+//console.log(document)
+//  OBJETO BODY
+//console.log(document.body);
+ // BUSCAR ELEMENTOS
+    // retornar 1 elemento específico
+       //console.log(  document.getElementById('cont1')  )
+      // console.log( cont1 );
+    // retornar vários elementos com algo em comum
+          //let minhaTag = document.getElementsByClassName('estilo1')
+          //let minhaTag = document.querySelector('.estilo1 ');
+          //let minhaTag = document.querySelectorAll('#cont1 .estilo1');
+          //console.log( minhaTag  );
+    // buscar elementos anteriores
+          //let minhaTag = cont2.parentNode
+          //console.log( minhaTag  );
+    // buscar elementos filho
+          //let minhaTag = cont2.children
+          //console.log( minhaTag[0] );
+    // buscar a partir de qualquer elemento
+         // cont1.getElementsByClassName('estilo1');
+ // ATUALIZAR PROPRIEDADES DOS ELEMENTOS
+         // DOC https://www.w3schools.com/jsref/default.asp
+         //cont1.querySelector('h2').innerText = 'Minha Lista 1';
+         //document.querySelector('ul').style.backgroundColor = '#cccccc';
+         //document.querySelectorAll('ul')[0].style.backgroundColor = '#cccccc';
+         //REMOVE
+         //document.querySelectorAll('ul')[1].removeAttribute("style")
+ // ADD/REMOVE CLASS,ID,STYLE     
+          //document.getElementsByTagName('li')[2].classList.remove("estilo1")
+         //document.getElementsByTagName('li')[2].classList.add("estilo2")
+
+         //document.querySelectorAll('.estilo1')[0].setAttribute('id','itemFavorito')
+         //document.querySelectorAll('.estilo1')[0].removeAttribute("id");
+ // EXEMPLOS COM FUNÇÕES
+// function clearTextByTagName(tagName){
+//      let tags = document.getElementsByTagName(tagName)
+
+//      for(let i = 0; i < tags.length; i++){
+//           if(tags[i].classList == 'estilo1'){
+//             continue; // o que tiver class estilo1 , não executar a função'pular'
+//           }
+//           tags[i].innerText = '';
+
+//      }
+//      console.log(tags)     
+// }
+// clearTextByTagName('li');
 
 //Parte 2 - Seletores de elementos
 //Conteúdos
@@ -386,7 +437,59 @@
 // const footer = document.getElementById('footer-container');
 // footer.style.backgroundColor = 'rgb(0, 53, 51)';
 
-//5.2 - Trabalhando com Seletores
+//5.2 - TRABALHANDO COM ELEMENTOS
+//Aula ao vivo
+// Cirar elemento HTML por Javascript() 
+//let div = document.createElement('div');
+//div.className = 'main-box';
+//div.id = 'fourth';
+// Adicionar e remover elemento no DOCUMENTO HTML
+//document.getElementsByTagName('main')
+//main.appendChild(div);
+//main.removeChild(div);
+//div.innerText = 'conteudo....';
+// encontrar o primeiro filho
+//let firstElem = document.querySelector('#first').firstElementChild;
+//console.dir(firstElem);
+// encontrar o próximo irmão
+//let proxElem = document.querySelector('#first').nextElementSibling;
+//console.log(proxElem);
+// colocar multiplas classes aos elementos por javascript
+//drawing.className = "yellow circle small";
+/* 
+drawing.classList.remove('red');
+drawing.classList.remove('circle');
+drawing.classList.remove('small');
+drawing.classList.add('yellow');
+drawing.classList.add('circle');
+drawing.classList.add('small');
+ */
+//console.log(drawing.classList)
+// Converter array em STRING
+// let frutas = ["Banana","Laranja","Maça","Manga"];
+//console.log(frutas)
+//let resultado =  frutas.join(',')
+//console.log(resultado); 
+// Converter STRING em ARRAY
+//let frutasArr = resultado.split(',');
+//console.log('frutasArr: ', frutasArr)
+// EXEMPLOS COM FUNÇÕES
+//let arrClasses = ['yellow', 'circle', 'small'];
+//let arrClasses2 = ['red', 'square', 'small'];
+//let arrClasses3 = ['green', 'circle', 'small'];
+//let ball1 = createCustomElement(arrClasses);
+//second.appendChild(ball2);
+//document.querySelector('.main-box').appendChild(ball1);
+//document.querySelectorAll('.main-box')[1].appendChild(ball1);
+//let ball2 = createCustomElement(arrClasses2);
+//third.appendChild(ball2);
+//createCustomElement(arrClasses3);
+// function createCustomElement(myClasses){
+//     let element = document.createElement('div');
+//     let str = myClasses.join(' ');
+//     element.className = str;
+//     return element;
+// }
 
 //Parte I - Buscando elementos
 //Conteúdos
@@ -437,3 +540,76 @@
 // }
 // const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
 // segundoEUltimoFilhoDoFilho.remove();
+
+// Exercícios Trabalhando com elementos - Agora a prática
+// // 1- Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+// const elementH1 = document.createElement('h1');
+// elementH1.innerText = 'Exercício 5.2 - JavaScript DOM';
+// document.body.appendChild(elementH1);
+// // 2. Adicione a tag `main` com a classe `main-content` como filho da tag `body`;
+// const elementMain = document.createElement('main');
+// elementMain.className = 'main-content';
+// document.body.appendChild(elementMain);
+// // 3. Adicione a tag `section` com a classe `center-content` como filho da tag `main` criada no passo 2;
+// const elementSectionCenter = document.createElement('section');
+// elementSectionCenter.className = 'center-content';
+// elementMain.appendChild(elementSectionCenter);
+// // 4. Adicione a tag `p` como filho do `section` criado no passo 3 e coloque algum texto;
+// const paragraph = document.createElement('p');
+// paragraph.innerHTML = 'Texto Show';
+// elementSectionCenter.appendChild(paragraph);
+// // 5. Adicione a tag `section` com a classe `left-content` como filho da tag `main` criada no passo 2;
+// const elementSectionLeft = document.createElement('section');
+// elementSectionLeft.className = 'left-content';
+// elementMain.appendChild(elementSectionLeft);
+// // 6. Adicione a tag `section` com a classe `right-content` como filho da tag `main` criada no passo 2;
+// const elementSectionRight = document.createElement('section');
+// elementSectionRight.className = 'right-content';
+// elementMain.appendChild(elementSectionRight);
+// // 7. Adicione uma imagem com `src` configurado para o valor `https://picsum.photos/200` e classe `small-image`. Esse elemento deve ser filho do `section` criado no passo 5;
+// const elementImg = document.createElement('img');
+// elementImg.className = 'small-image';
+// elementImg.src = 'https://picsum.photos/200';
+// elementSectionLeft.appendChild(elementImg);
+// // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, `um`, `dois`, `três`, ... como valores da lista. Essa lista deve ser filha do `section` criado no passo 6;
+// const elementUl = document.createElement('ul');
+// elementSectionRight.appendChild(elementUl);
+// const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+//       'Sete', 'Oito', 'Nove', 'Dez']
+// for (let num in arrayNumbers) {
+//       const elementLi = document.createElement('li');
+//       elementLi.innerHTML = arrayNumbers[num];
+//       elementUl.appendChild(elementLi);
+// }
+// // 9. Adicione 3 tags `h3`, todas sendo filhas do `main` criado no passo 2.
+// for (let index = 1; index <= 3; index += 1) {
+//       const elementH3 = document.createElement('h3');
+//       elementH3.innerHTML = 'Show ' + index;
+//       elementMain.appendChild(elementH3);
+// }
+// // Segunda Parte
+// // 1.Adicione a classe title na tag h1 criada;
+// const title = document.querySelector('h1');
+// title.className = 'title';
+// // 2.Adicione a classe description nas 3 tags h3 criadas;
+// const elementsH3 = document.getElementsByTagName('h3');
+// for (let index = 0; index < 3; index += 1) {
+//       elementsH3[index].className = 'description';
+// }
+// // 3. Remova a `section` criado no passo 5 (aquele que possui a classe `left-content`). Utilize a função `.removeChild()`;
+// const sectionLeftContent = document.getElementsByClassName('left-content')[0];
+// elementMain.removeChild(sectionLeftContent);
+// // 4. Centralize a `section` criado no passo 6 (aquele que possui a classe `right-content`). Dica: para centralizar, basta configurar o `margin-right: auto` da `section`;
+// const sectionRightContent = document.getElementsByClassName('right-content')[0];
+// sectionRightContent.style.marginRight='auto';
+// // 5. Troque a cor de fundo do elemento pai da `section` criada no passo 3 (aquela que possui a classe `center-content`) para a cor verde;
+// const sectionCenterContent = document.getElementsByClassName('center-content')[0];
+// sectionCenterContent.parentNode.style.backgroundColor = 'green';
+// // 6.Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+// ul.lastChild.remove();
+// ul.lastChild.remove();
+
+//5.3 EVENTOS
+//Parte I - O que é um escutador de eventos?
+//Parte II - Exercício do conteúdo - Conheça o addEventListener
+//
