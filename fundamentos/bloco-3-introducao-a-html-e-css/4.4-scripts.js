@@ -345,6 +345,7 @@
 //Bloco5 - JavaScript: DOM, Eventos e Web Storage
 
 //5.1 - DOM E SELETORES
+
 //Aula ao vivo
 //console.log('oi! tudobem?')
  // OBJETO WINDOW
@@ -610,6 +611,60 @@ drawing.classList.add('small');
 // ul.lastChild.remove();
 
 //5.3 EVENTOS
+
+//Aula ao vivo
+// window.onload = function () { //função anônima, quando n tem nome
+//       // o js no html esta declarado dentro do head, por isso, todo conteúdo do js deve iniciar só depois do html carregado, por este motivo o js deve estar dentro do windown.onload
+//   const button = document.querySelector('#start-race-btn'); // chamou o button pro js
+//   const car1 = document.querySelector('.car1'); //chamou o car1
+//   const car2 = document.querySelector('.car2'); //chamou o car2
+//   function reset() {
+//     car1.style.marginLeft = '0px'; // deve iniciar em 0 pro carro não voltar, sem este valor ele é uma string vazia, com isso o cálculo do button não funciona
+//     car2.style.marginLeft = '0px'; 
+//   }
+//   reset();  
+//   button.addEventListener('click', function() { // tipo de evento, o que disparar
+//     car1.style.marginLeft = parseInt(car1.style.marginLeft) + Math.random() * 100 + 'px'; // desloca o car1 pra esquerda de maneira aleatória e soma com o próprio valor atual pra continuar indo a esquerda, pra isso ele deve transformar a string em número inteiro, dai o uso do parseInt.
+//     car2.style.marginLeft = parseInt(car2.style.marginLeft) + Math.random() * 100 + 'px';
+//     if ((parseInt(car1.style.marginLeft) + 200) > window.innerWidth) { // Se a margin esquerda do carro + o tamanho dele (200) for maior que o tamanho da largura da página, ele emite um alerta de ganhou e zera a margin esquerda novamente"
+//       alert('Carro VERMELHO ganhou!!!');
+//       reset();
+//     } 
+//     if ((parseInt(car2.style.marginLeft) + 200) > window.innerWidth) {
+//       alert('Carro VERDE ganhou!!!');
+//       reset();
+//     }
+//   });
+// }
+
+//DiNãmica Calculadora
+// const input1 = document.querySelector('#numero1');
+// const input2 = document.querySelector('#numero2');
+// const btnSoma = document.querySelector('.soma');
+// const btnSubtracao = document.querySelector('.subtracao');
+// const paragrafoResultado =  document.querySelector('.resultado');
+// function soma() {
+//   if(input1.value !== '' && input2.value !== '') {
+//     paragrafoResultado.innerHTML = parseInt(input1.value) + parseInt(input2.value);
+//   } else{
+//     alert('Falta um número'); 
+//     paragrafoResultado.innerHTML = '';
+//   }
+// }
+// btnSoma.addEventListener('click', soma);
+// function subtracao() {
+//   if(input1.value !== '' && input2.value !== '') {
+//     paragrafoResultado.innerHTML = parseInt(input1.value) - parseInt(input2.value);
+//   } else{
+//     alert('Falta um número'); 
+//     paragrafoResultado.innerHTML = '';
+//   }
+// }
+// btnSubtracao.addEventListener('click', subtracao);
+
 //Parte I - O que é um escutador de eventos?
 //Parte II - Exercício do conteúdo - Conheça o addEventListener
-//
+//Exercícios Eventos - Agora a prática
+
+
+
