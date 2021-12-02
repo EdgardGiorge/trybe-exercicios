@@ -812,3 +812,34 @@ drawing.classList.add('small');
 //     }
 //   };
 // days.addEventListener('click', setDayColor);
+
+//5.4 WEB STORAGE
+//Cookies
+//document.cookie ='email = edgardgiorge@hotmail.com'; //cria um cookie em formato de string
+//document.cookie = "email=edgardgiorge@hotmail.com; expires=Sun, 17 Dec 2022 12:00:00 UTC path=/"; // evita que o cookie se apague após fechar o navegador colocando uma data á expirar, path indica o caminho, por padrão é a ṕágina atual conforme exemplo supra! 
+//document.cookie = "email=isabella@email.com; expires=Thu, 17 Dec 2020 12:00:00 UTC"; // atribui novo valor ao cookie1, neste caso apagando o cookie se colocarmos uma data expirada
+//let cookie1 = document.cookie; // conteúdo do cookie pra uma variável
+//console.log(cookie1);
+
+//Local e Session Storage
+//Exemplos de utilização
+// console.log(localStorage.length); // não possui nada salvo, então o retorno é o valor: 0
+// localStorage.setItem('firstName', 'Edgard'); //salva uma entrada com a key = "firstname" e value = "Edgard"
+//localStorage.setItem('lastName', 'Giorge'); //salva uma entrada com a key = "lastname" e value = "Giorge"
+// localStorage.getItem("laststName") // retorna o valor "Giorge"
+//localStorage.key(0); // uma outra maneira de retornar o valor da chave, neste caso a primeira posição 
+//localStorage.lastName; // outra maneira de retornar value
+//localStorage['lastName']; // outra maneira de retornar value
+//localStorage.removeItem("lastName") // remove a entrada referente a key = "lastname"
+//delete.localStorage.lastName; // outra maneira de apagar a chave
+//localStorage.clear() // limpa todas as entradas salvas em localStorage
+//let localStorage1 = localStorage;
+//console.log(localStorage1); // imprimi no console
+////Obs. o Session Storage são os mesmos comandos, são removidos assim que fechamos a aba , local Storage nunca é removido sem atuação (localStorage.removeItem("lastName")).
+
+//Aula ao vivo
+// let json = '{"result": true, "count":42}'; // tem que ser em "" dentro
+// let obj = JSON.parse(json); // transforma uma string em um objeto
+// console.log(obj.result, obj.count); // true 42
+// let json1 = JSON.stringify(obj); // transforma um objeto em um string 
+// console.log(json1); // {"result":true,"count":42}
