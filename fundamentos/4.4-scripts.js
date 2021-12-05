@@ -843,3 +843,4 @@ drawing.classList.add('small');
 // console.log(obj.result, obj.count); // true 42
 // let json1 = JSON.stringify(obj); // transforma um objeto em um string 
 // console.log(json1); // {"result":true,"count":42}
+
