@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Submeter Palestra</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--link do cdn do bootstrap,assim n precisa fazer download dos arquivos  -->
+  <link rel="stylesheet"
+        href="6.2-forms-aovivo.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"
+          defer></script>
+
+  <script src="6.2-forms-aovivo.js"
+          defer></script>
+</head>
+
+<!-- REGEX / Expressões regulares 
+Substituir ou apagar todas as classes: Da um ctrl-F, em localizar, de um espaço class=".*", escolha a opção asterístico ao lado, em substituir, escolha substituir em todas as ocorrências,deixe vazio, ele apagará todas as classes-->
+
+<body>
+  <header class="container text-center"> <!-- Na documentação do bootstrap, pesquisamos por container, a classe container realiza bordas e outros no elemento, a classe text-center centraliza o texto -->
+    <h1 class="display-1">Submeter Palestra</h1> <!-- a classe display-1Altera a tipografia do texto aplica-se normalmente no h1 -->
+    <p class="lead"><em>Quer palestrar na nossa conferência? Preencha o formulário!</em></p> <!-- a classe lead faz o parágrafo se destacar-->
+  </header>
+
+  <main>
+    <!-- form ,existe uma sessão inteira dedicada a forms na documentação-->
+    <form action=""
+          class="container"
+          method="get">
+
+      <!-- input - full-name -->
+      <div class="mb-3"> <!-- mb-3, coloca espaço entre um elemento e outro ,obs. apaguei uma div que tinha nesta parte do form -->
+        <label class="form-label" 
+               for="full-name-id">Nome</label> <!-- form-label, verificar na documentação -->
+        <input class="form-control"
+               type="text"
+               name="full-name"
+               required
+               id="full-name-id"> <!-- form-control, foi pra baixo do label, aumentou seu tamanho,tem um respiro -->
+      </div>
+
+      <!-- fieldset - type of talk , o próprio bootstrap removeu o círculo do fildset, dai excluí a tag -->
+      <div class="mb-3">
+        <p class="lead">Tipo de palestra</p>
+        <div class="form-check form-check-inline"> <!-- form-check classe coloca o input na frente do label, form-check-inline deixa os input's um ao lado do outro -->
+          <label class="form-check-label"
+                 for="talk-type-main-stage">Palco Principal</label>
+          <input type="radio"
+                 class="form-check-input"
+                 name="talk-type"
+                 value="mainstage"
+                 id="talk-type-main-stage">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label"
+                 for="talk-type-workshop">Workshop</label>
+          <input type="radio"
+                 class="form-check-input"
+                 name="talk-type"
+                 value="workshop"
+                 id="talk-type-workshop">
+        </div>
+      </div>
+
+      <!-- select - t-short size -->
+      <div class="mb-3">
+        <label class="form-label"
+               for="t-shirt-size">Tamanho da camisa:</label>
+        <select class="form-select"
+                name="t-shirt-size"
+                id="t-shirt-size"> <!-- - pesquisar na documentação as demais classes o que fazem -->
+          <option value="P">Pequeno</option>
+          <option value="M">Médio</option>
+          <option value="G">Grande</option>
+        </select>
+      </div>
+
+      <!-- textarea - abstract  -->
+      <div class="mb-3">
+        <label class="form-label"
+               for="abstract">Resumo da palestra</label>
+        <textarea name="abstract"
+                  id="abstract"
+                  class="form-control"
+                  placeholder="Explique o conteúdo da sua palestra"
+                  cols="30"
+                  rows="10"></textarea>
+      </div>
+
+      <!-- checkbox - available -->
+      <div class="form-check mb-3">
+        <input type="checkbox"
+               class="form-check-input"
+               name="available"
+               value="sim"
+               id="available">
+        <label class="form-check-label"
+               for="available">Confirmo que estou disponível na data do evento</label>
+      </div>
+
+      <div>
+        <button class="btn btn-primary"
+                type="submit">Enviar</button>
+        <button id="btn-dont-click" class="btn btn-danger"
+                type="reset">Não clique</button>
+      </div>
+    </form>
+  </main>
+
+  <div class="modal"
+       tabindex="-1"> <!-- modal é um tipo de alert estilizável, sempre no final do body -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">NÃO CLICAR</h5>
+          <button type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Eu avisei. 🤷</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal">Close</button>
+          <button type="button"
+                  class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
