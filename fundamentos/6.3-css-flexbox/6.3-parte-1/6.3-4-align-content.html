@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Align Content</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        min-height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 30%;
+      }
+
+      .box-container {
+/* 3 - Teste as possibilidades ( center , flex-start , flex-end , stretch , space-around e space-between ) para a propriedade align-content . */
+/* Alinha as linhas do container em relação ao eixo transversal (cross-axis), sendo que essa propriedade só funciona caso haja mais de uma linha de flex items. */
+        /* align-content: stretch; /* vem como padrão (ou normal), stretch faz com os flex items cresçam igualmente na vertical */
+        /* align-content: flex-start; /* alinha todas as linhas de itens ao início */
+        /* align-content: flex-end; /* alinha todas as linhas de itens ao final */
+        /* align-content: center; /* alinha todas as linhas ao centro */
+        /* align-content: space-between; /* espaçamento igual entre as linhas, mantendo a primeira grudada no topo e a última no bottom */
+        align-content: space-around; /* espaçamento entre as linhas, mas os espaçamentos do meio são duas vezes maiores que o top e o bottom. */
+        background-color: #0fa36b;
+        display: flex;
+        flex-wrap: wrap;
+        height: 600px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Propriedades: Align Content</h1>
+    <div class="box-container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+    </div>
+  </body>
+</html>

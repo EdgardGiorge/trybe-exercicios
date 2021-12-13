@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Flex Flow</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 30%;
+      }
+
+      .box-container {
+        background-color: #0fa36b;
+        display: flex;
+        /* 1 - Teste as possibilidades ( row , column , row-reverse e column-reverse ) para a propriedade flex-direction. */
+        /*flex-direction: row;  /* Padrão do flex-direction, o Main Axis(eixo principal) tem a direção definida como horizontal! */
+        /*flex-direction: column;  /* O Main Axis tem a direção definida como vertical! */
+        /*flex-direction: row-reverse; /* Direção definida como horizontal(linha) e inverte a ordem dos elementos, neste caso as div's! */
+        /*flex-direction: column-reverse; /* Direção definida como vertical(coluna) e inverte a ordem dos elementos, neste caso as div's! */
+/* 2 - Teste as possibilidades ( wrap e nowrap ) para a propriedade flex-wrap. R. controla como os itens dentro do container são quebrados*/
+        /*flex-wrap: nowrap;/* padrão do flex-wrap, estica o conteúdo ultrapassando o tamanho do containercontrola como os itens dentro do container são quebrados */ 
+        /*flex-wrap: wrap;/* Quebra o conteúdo pra linha de baixo, neste caso passa as div's pra linha de baixo */
+        /*flex-wrap: wrap-reverse; /* Quebra o conteúdo pra linha de baixo */
+/* 3 - Teste as possibilidades para a propriedade flex-flow. */
+        flex-flow: row wrap;/* Une as propriedades flex-direction e flex-wrap, setar primeiro o direction e em segundo o wrap*/
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Introdução, estrutura básica, flex-direction, flex-wrap, flex-flow e reverse</h1>
+    <div class="box-container">
+      <div class="box">1Edgard Giorge </div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+  </body>
+</html>

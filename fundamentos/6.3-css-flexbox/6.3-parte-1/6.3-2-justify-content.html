@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Justify Content</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 20%;
+      }
+      .box1 {
+        height: 130px;
+      }
+
+      .box-container {
+        background-color: #0fa36b;
+        display: flex;
+/* 1 - Utilizando o código abaixo, teste as possibilidades ( center , flex-start , flex-end , space-around e space-between ) para a propriedade justify-content. */
+/* justify-content - Alinha os flex itens de acordo com a direção  */
+        /* justify-content: normal; /* padrão */
+        justify-content: space-evenly; /* espaçamento iguais entre os elementos, divididos de acordo com o tamanho do container. */ 
+        /* justify-content:space-between; /* espaçamento iguais entre os elementos, primeiro no inicio, o último no fim */
+        /* justify-content: space-around; /* espaçamento iguais entre os elementos, mas do meio são duas vezes maiores que o inicial e final. */
+        /* justify-content: flex-start; /* Alinha flex items ao longo do eixo principal da linha atual do flex container.(começo)*/
+        /* justify-content:flex-end; /* alinha no fim*/
+        /* justify-content: center; /* alinha no centro*/
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Propriedades: Justify-content</h1>
+    <div class="box-container">
+      <div class="box box1">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  </body>
+</html>
