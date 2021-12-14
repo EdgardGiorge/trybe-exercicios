@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX - ORDER</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one {
+        background-color: #FBD26A;
+        display: flex;
+/* Altere a propriedade order. */
+/* A propriedade order nos permite ordenar itens de um determinado container. Esta propriedade é particular de cada item e, quando utilizada, fará com que o flexbox os exiba em ordem crescente.
+Por padrão, a propriedade order , implicitamente, possui o valor 0 , isso significa que, se apenas um item dentre 5 em um container recebe a propriedade order: 1 , todos os outros ficarão ordenados da forma que foram construídos no HTML, enquanto este será posicionado após os demais.
+É interessante chamar a atenção para o fato de que a propriedade aceita valores negativos. Assim, continuando o exemplo acima, caso o item diferentão receba order: -1 , ele será exibido antes dos demais (porque, como dito acima, order sempre tratará os itens em ordem crescente). */
+        order: 1;
+        list-style: none;
+      }
+
+      .two {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 0;
+        list-style: none;
+      }
+
+      .three {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Propriedade: order</h1>
+    <ul class="container">
+      <li class="box one">1</li>
+      <li class="box two">2</li>
+      <li class="box three">3</li>
+      <li class="box four">4</li>
+    </ul>
+  </body>
+</html>
