@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); /* tipos de fonte */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'); /*fontes com formato de imagens, neste exemplo estão sendo usadas no footer e no meio do site */
+
+* {  /* tipo um reset de css */
+  margin: 0;
+  padding: 0;
+  font-family: Open Sans, sans-serif; /* Open Sans é do import da linha 1 */
+  box-sizing: border-box; /*usado pra não considerar tamanho de bordas nos elementos*/
+}
+
+header {
+  background:rgb(112, 231, 219); /*orig. era white */
+  display: flex;
+  align-items: center; /*alinha os itens baseado no eixo cruzado*/
+  justify-content: space-between; /* cria um espaçamento igual entre os elementos, mantendo o primeiro grudado no início e o último no final */
+  padding: 20px 5px;
+  width: 100%; /*pra ocupar toda a linha superior, completar até o fim da página */
+  position: fixed; /* o header fixa fixo independente do scroll */
+  z-index: 2; /* o header fica acima de tudo quando o scroll acontecer! Eixo z é o de profundidade */
+}
+
+a {
+  opacity: 0.8; /* deixa a imagem um pouco mais clara/opaca com apenas 20% */
+  text-decoration: none; /* tira o sublinhado/underlines das tags 'a'/links */
+  cursor: pointer; /* quando passa o mouse no elemento, tenha o cursor pointer */
+  padding: 0 10px; /* espaço entre eles de 10px */
+}
+
+a:hover {
+  opacity: 1; /* ao passar o mouse, o elemento deixa de ser opaco */
+}
+
+a:visited , a:hover , a:active { /*todos tipos de estado de um link */
+  color: inherit; /* herda a cor do container (o que vem de cima, do elemento pai) */
+}
+
+header img {
+  width: 100px; /* deixa a foto com um tamanho proporcional no header orig. era 200px */
+}
+
+.hero {
+  background-image: url('imagens/selfwhats.JPG'); /* imagem de fundo */
+  height: 100vh; /*unidade de medida relativa (existem outras, procurar no css units) irś se ajustar de acordo com a altura da tela sem perder a qualidade */
+  background-size: cover; /* encaixa a imagem da melhor forma possível pelo centro */
+  display: flex;
+  align-items: center; /*alinha os itens baseado no eixo cruzado*/
+  justify-content: center; /*alinha os itens baseado no eixo principal*/
+  flex-direction: column; /* deixa os elementos um abaixo do outro (eixo principal agora é o y, vertical) */
+  text-align: center; /* alinha o texto ao centro */
+  color:cornsilk;
+  padding: 0 10px;
+}
+
+.hero h1 { /* dentro da classe hero, captura uma tag h1 */
+  font-size: 3.2em;
+  margin-bottom: 15px;
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 15px;  
+}
+
+.hero .button {
+  background-color: white;
+  border-radius: 3px;
+  color: rgb(25, 28, 3);
+  padding: 20px 50px; /* deixa com tamanho/formato de um botão */
+  text-transform: uppercase; /* fica com a letra maiúscula */
+}
+
+.know-the-hotel {
+  padding: 100px 50px; /* respiro nas fotos em cima e nas laterais */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.know-the-hotel h3 {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  color: rgb(25, 28, 3);
+}
+
+.know-the-hotel p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: rgb(25, 28, 3);
+}
+
+.know-the-hotel hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: rgb(25, 28, 3);
+}
+
+.know-the-hotel .grid {
+  display: flex; /* filhos de filhos de container deve ser aplicado display-flex, ele não herda */
+  flex-wrap: wrap; /* quebra pra linha de baixo pra o container abraçar todas as fotos */
+  width: 100%; /* ocupa todo o container */
+}
+
+.know-the-hotel .grid img { /* setar as propriedades das fotos */
+  height: 350px; /* pra não perder a proporção */
+  padding: 20px; /* espaçamento entre os elementos/fotos */
+  object-fit: cover; /* pra que as imagens se redimensionem dentro do espaço possível */
+  width: 100px;
+}
+
+.know-the-hotel .grid .small {
+  flex-basis: 40%; /* atribui o tamanho base dos itens, menores com 40% e maiores com 60% */
+}
+
+.know-the-hotel .grid .large {
+  flex-basis: 60%; /* atribui o tamanho base dos itens, menores com 40% e maiores com 60% */
+}
+
+.features {
+  background-color: rgb(25, 28, 3);
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features h3 {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  text-align: center;
+  color: white;
+}
+
+.features p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: white;
+}
+
+.features hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: white;
+}
+
+.features .grid {
+  display: flex;
+}
+
+li {
+  list-style: none; /* remove os pontos das li's */
+}
+
+.features .grid li {
+  text-align: center;
+  padding: 0 30px;
+}
+
+.features .grid li i { /* aumenta o tamanho dos ícones e cores */
+  color: rgb(195, 198, 59);
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+.features .grid li h4 {
+  font-size: 1.5rem;
+  color: rgb(195, 198, 59);
+  margin-bottom: 30px;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 50px;
+}
+
+.newsletter h3 {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  text-align: center;
+  color: rgb(195, 198, 59);
+}
+
+.newsletter p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: rgb(195, 198, 59);
+}
+
+.newsletter hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: rgb(195, 198, 59);
+}
+
+.newsletter form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 800px;
+}
+
+.newsletter input {
+  padding: 15px;
+  border: 1px solid rgb(195, 198, 59);
+  border-radius: 4px;
+  margin-right: 15px;
+  flex: 1;
+}
+
+.newsletter button {
+  padding: 15px;
+  background-color: rgb(195, 198, 59);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(25, 28, 3);
+  padding: 50px 0;
+}
+
+.footer .social li {
+  margin-right: 10px;
+}
+
+.footer ul {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.footer ul li .icon-color {
+  color: rgb(195, 198, 57);
+  font-size: 2rem;
+}
+
+.footer p {
+  color: rgb(195, 198, 59);
+  text-align: center;
+}
