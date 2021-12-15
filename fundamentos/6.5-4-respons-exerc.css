@@ -1,0 +1,273 @@
+/*Exercício 1 Criar uma página para telas pequenas: 
+/*
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * apply a natural box layout model to all elements, but allowing components to change
+ */
+ 
+ 
+ /* html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 1.2em/1.2 Helvetica, aria, sans-serif;
+  margin: 0 3%;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: .9em 0 0 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 1.5em 0 0 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  background: black;
+  border-radius: 5px;
+  color: white;
+  margin: 0 0 25px 0;
+  padding: 10px;
+  text-align: center;
+}
+
+figcaption {
+  font-size: .8em;
+}
+
+@media screen and (min-width: 794px) {
+  body {
+    background: rgba(0,0,255,.2);
+    margin: 25px 6%;
+  }
+
+  figure {
+    float: left;
+    width: 45%;
+    margin-right: 4.5%;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  body {
+    background: rgba(0,255,0,.2);
+    margin: 25px 10%;
+    max-width: 1130px;
+  }
+
+  figure {
+    width: 30%;
+    margin-right: 2.5%;
+  }
+} */
+
+/* EXERCÍCIO 2- Criando 3 layouts diferentes utilizando o mobile first: */
+
+
+/* .container { 
+  display: flex;
+}
+
+p {
+  padding: 20px;
+}
+
+  
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightcoral;
+    font-family: sans-serif;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  p {
+    padding: 0 5px;
+    line-height: 1.5em;
+  }
+
+    
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+    
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  .container {
+    flex-wrap: nowrap;
+  }
+
+    
+} */
+
+
+/* EXERCÍCIO 3- Criando layouts para dispositivos móveis e para impressão */
+
+
+#container {
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+}
+
+#header {
+  background: #ccc;
+  padding: 20px;
+}
+
+#header h1 {
+  margin: 0;
+}
+
+#navigation {
+  float: left;
+  width: 100%;
+  background: #333;
+}
+
+#navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+#navigation ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+#navigation li a {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+}
+
+#navigation li a:hover {
+  background: #383;
+}
+
+#content-container {
+  float: left;
+  width: 100%;
+  background: #FFF;
+}
+
+#content {
+  clear: left;
+  float: left;
+  width: 60%;
+  padding: 20px 0;
+  margin: 0 0 0 4%;
+  display: inline;
+}
+
+#content h2 {
+  margin: 0;
+}
+
+#aside {
+  float: right;
+  width: 33%;
+  padding: 20px 0;
+  margin: 0 3% 0 0;
+  display: inline;
+}
+
+#aside h3 {
+  margin: 0;
+}
+
+#footer {
+  clear: left;
+  background: #ccc;
+  text-align: right;
+  padding: 20px;
+  height: 1%;
+}
+
+/** For printing **/
+@media print {
+  #header,
+  #navigation,
+  #footer {
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  #aside {
+    float: none;
+    display: block;
+    page-break-inside: avoid;
+  }
+}
+
+/** For small phones/windows **/
+@media (max-width: 450px) {
+  body {
+    padding: 0px;
+  }
+
+  #header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 35px;
+  }
+
+  #aside {
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #navigation {
+    margin-top: 75px;
+  }
+
+  #navigation ul li {
+    display: block;
+  }
+
+  #navigation ul li a {
+    float: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+
