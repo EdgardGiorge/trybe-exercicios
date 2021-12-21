@@ -8,7 +8,7 @@
 // Já no arquivo js (sum.js), cada arquivo é um módulo, usamos o módulo do js "module" pra exportar uma função ou objeto com a propriedade export : modeule.export = "nome da função ou objeto";
 //const sum = (a, b) => a + b; // esta função descrita agora pode ser inserida em um arquivo js
 
-const sum = require('./conteudo1');
+const sum = require('./sum');
   test('sums two values', () => {
     expect(sum(2, 3)).toEqual(5);
   });
