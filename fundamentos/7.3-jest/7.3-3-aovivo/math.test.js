@@ -4,7 +4,7 @@ const {
   summationOf: summationOf,
 } = require('./math');
 
-describe('The function sum', () => {
+describe('The function sum', () => { // função describe descreve o teste
   it('adds 1 + 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3);
   });
@@ -29,7 +29,7 @@ describe('The function sum', () => {
 });
 
 // eslint-disable-next-line max-lines-per-function
-describe('The function summationOf', () => {
+describe('The function summationOf', () => { // função describe descreve o teste
   it('exists', () => { // a função summationOf existe?
     expect(typeof summationOf).toBe('function');
   });
