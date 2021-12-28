@@ -30,7 +30,7 @@ describe('The function sum', () => { // função describe descreve o teste
 
 // eslint-disable-next-line max-lines-per-function
 describe('The function summationOf', () => { // função describe descreve o teste
-  it('exists', () => { // a função summationOf existe?
+  it('exists', () => { // ela(it), a função summationOf existe?
     expect(typeof summationOf).toBe('function');
   });
 
