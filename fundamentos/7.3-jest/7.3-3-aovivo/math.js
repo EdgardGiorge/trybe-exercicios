@@ -14,13 +14,13 @@ function sum(value1, value2) {
  * - `summationOf(5)` retorna 15: soma de 1 até 5 = 1 + 2 + 3 + 4 + 5 = 15
  */
 function summationOf(value) {
-  if (value === '') {
-    throw Error('summationOf deve receber um valor');
+  if (value === '') { // verifica se ele tem um valor , se não, envia a msg de erro abaixo
+    throw Error('summationOf deve receber um valor'); // lançou uma exceção 
   }
 
   // number é um número?
-  const number = Number(value);
-  if (Number.isNaN(number)) {
+  const number = Number(value); // Converteu a string em um number com o construtor do tipo Number, pro value convertido 
+  if (Number.isNaN(number)) { // O objeto Number verifica se o value não é um número (isNam) 
     throw Error('summationOf deve receber apenas números');
   }
 
@@ -33,8 +33,8 @@ function summationOf(value) {
   return accumulator;
 }
 
-if (typeof module !== 'undefined') {
-  module.exports = {
+if (typeof module !== 'undefined') { // module.exports, não existe no html para que ele não de log de erro no html usa este if (ele não existe no browser) 
+  module.exports = { // quando existe mais de uma função, usa-se estrutura de objeto
     sum: sum,
     summationOf: summationOf,
   };
