@@ -26,8 +26,8 @@ function summationOf(value) {
 
   let accumulator = 0;
 
-  for (let index = 1; index <= value; index += 1) {
-    accumulator += index;
+  for (let index = 1; index <= value; index += 1) { // realiza o somatório
+    accumulator += index; //pega o valor do index atual e soma com o valor do acum. 
   }
 
   return accumulator;

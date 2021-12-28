@@ -13,7 +13,7 @@ describe('The function sum', () => {
     // Dá uma espiadinha neste matcher aqui! 🙃
     // Experimente substituir por .toBe() para ver o que acontece. 😉
     expect(sum(5.1, 6.55)).toBeCloseTo(11.65);
-  }); // toBeCloseTo ,matcher pra números em ponto flutuante pra ser aproximadamente igual (ponto flutuante tem variação nas casas decimais)
+  }); // toBeCloseTo ,matcher pra números em ponto flutuante o resultado pode ser aproximadamente igual (ponto flutuante tem variação nas casas decimais)
 
   it('adds 0 + 0 to equal 0', () => {
     expect(sum(0, 0)).toBe(0);
@@ -30,19 +30,19 @@ describe('The function sum', () => {
 
 // eslint-disable-next-line max-lines-per-function
 describe('The function summationOf', () => {
-  it('exists', () => {
+  it('exists', () => { // a função summationOf existe?
     expect(typeof summationOf).toBe('function');
   });
 
-  it('returns 1 when the input is 1', () => {
+  it('returns 1 when the input is 1', () => { // O somatório de 1 tem que ser igual a 1
     expect(summationOf(1)).toBe(1);
   });
 
-  test('returns 6 when the input is 3', () => {
+  test('returns 6 when the input is 3', () => { // O somatório de 3 tem que ser igual a 6
     expect(summationOf(3)).toBe(6);
   });
 
-  test('returns 15 when the input is 5', () => {
+  test('returns 15 when the input is 5', () => { // O somatório de 5 tem que ser igual a 15
     expect(summationOf(5)).toBe(15);
   });
 
