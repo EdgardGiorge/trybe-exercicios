@@ -46,13 +46,13 @@ describe('The function summationOf', () => { // função describe descreve o tes
     expect(summationOf(5)).toBe(15);
   });
 
-  test('throws an error when the input is an empty string', () => {
+  test('throws an error when the input is an empty string', () => { // Joga um erro quando a entrada da função é uma string vazia
     expect(() => {
       summationOf('');
-    }).toThrow();
+    }).toThrow(); // matcher toThrow captura uma exceção Obs. este matcher tem que envolver a função dentro de uma outra função pra ele não gerar erro
   });
 
-  test('throws an error when the input is undefined', () => {
-    expect(() => { summationOf(); }).toThrow();
+  test('throws an error when the input is undefined', () => { // Joga um erro quando a entrada da função for indefinida
+    expect(() => { summationOf(); }).toThrow(); //Obs. este matcher tem que envolver a função dentro de uma outra função pra ele não gerar erro
   });
 });

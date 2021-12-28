@@ -13,8 +13,8 @@ function onClickButton() {
     const inputNumber = document.querySelector('#number');
     const result = summationOf(inputNumber.value);
     showResult(inputNumber.value, result);
-  } catch (xulambs) {
-    showError(xulambs.message);
+  } catch (error) {
+    showError(error.message);
   }
 }
 
