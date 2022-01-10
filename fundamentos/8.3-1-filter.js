@@ -40,3 +40,42 @@ const removeStudentByName = (name, listStudents) =>
 
 const newListStudents = removeStudentByName('Ricardo', arrayMyStudents);
 console.log(newListStudents); // [ 'Maria', 'Manuela', 'Jorge', 'Wilson' ]
+
+// filter AO VIVO
+const numbers1 = [2, 3, 4, 5, 6, 7, 8];
+
+const every = numbers1.every((number) => number % 2 === 0);
+console.log('every', every); //Todos os valores são pares? R. false
+
+const some = numbers1.some((number) => number % 2 === 0);
+console.log('some', some);//Algum valor é par? R. true
+
+const find = numbers1.find((number) => number % 2 === 0);
+console.log('find', find); // O primeiro elemento par é o 2
+
+const filter = numbers1.filter((number) => number % 2 === 0);
+console.log('filter', filter); // Traz todos os elementos pares
+
+const filterOdd = numbers1.filter((number) => number % 2 !== 0);
+console.log('filter odd', filterOdd);// Traz todos os elementos impares 
+
+// filter em objetos:
+const users = [
+  { firstName: 'Homer', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Marge', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Bart', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Lisa', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Maggie', lastName: 'Simpson', isDriver: false },
+];
+
+const cantDrive = users.filter((user) => !user.isDriver);
+console.log('cant drive', cantDrive); // Traz todos os que não são motoristas isDriver: false
+
+const firstLetter = users.filter((user) => user.firstName[0] === 'M');
+console.log('first letter', firstLetter);// filtra os nomes que começam com a letra M
+
+const thirdLetter = users.filter((user) => user.firstName[2] === 'r');
+console.log('third letter', thirdLetter);// filtra os nomes que contém a terceira letra r 
+
+const takeOut = users.filter((user) => user.firstName !== 'Bart');
+console.log('take out', takeOut);// Retira o Bart da lista e traz todos os outros elementos
