@@ -193,7 +193,83 @@ let reportStatus = (name, students) => {
 
 console.log(reportStatus('Natalia', estudantes));
 
+// map AO VIVO
 
+const users = [
+  { firstName: 'Homer', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Marge', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Bart', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Lisa', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Maggie', lastName: 'Simpson', isDriver: false },
+];
+
+const firstName = users.map((user) => user.firstName);
+console.log('first name', firstName); // filtra o primeiro nome (firstName) de todos os elementos do objeto user
+
+// const canDrive = users.map((user) => {
+//   if (user.isDriver) {
+//     return user.firstName;
+//   }
+// });
+
+// const canDrive = users.filter((user) => user.isDriver === true).map((user) => user.firstName);
+const canDrive = users.filter((user) => user.isDriver === true); // ou user.isDriver
+const canDriveSeparado = canDrive.map((user) => ({ nome: user.firstName }));
+console.log('can drive', canDriveSeparado); // filtra todos os que podem dirigir (filter), depois cria um array apenas com eles (map)
+
+// map x foreach AO VIVO
+const users1 = [
+  { firstName: 'Homer', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Marge', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Bart', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Lisa', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Maggie', lastName: 'Simpson', isDriver: false },
+];
+
+// mandar email para pessoas que dirigem, eu uso map ou forEach?
+
+// const sendEmail = (arr) => {
+//   arr.forEach((user) => {
+//     if (user1.isDriver) {
+//       console.log(`${user1.firstName} vc pode dirigir`);
+//     }
+//   });
+// };
+
+// sendEmail(users);
+
+const users2 = [
+  { user: { firstName: 'Homer', lastName: 'Simpson' }, isDriver: true },
+  { user: { firstName: 'Marge', lastName: 'Simpson' }, isDriver: true },
+  { user: { firstName: 'Bart', lastName: 'Simpson' }, isDriver: false },
+  { user: { firstName: 'Lisa', lastName: 'Simpson' }, isDriver: false },
+  { user: { firstName: 'Maggie', lastName: 'Simpson' }, isDriver: false },
+];
+
+const sendEmail = (arr) => {
+  const result = arr.filter((user) => user.isDriver).map((userMap) => userMap.user.firstName).forEach((userForEach) => console.log(`${userForEach} vc pode dirigir`)
+  );
+  return result;
+};
+
+// maneira mais detalhada...
+
+// const sendEmail = (arr) => {
+//   const listaFiltrada = arr.filter((user) => {
+//     console.log('user filter', user);
+//     return user.isDriver;
+//   });
+
+  // const listaMapeada = listaFiltrada.map((userMap) => {
+  //   console.log('userMap', userMap);
+  //   return userMap.user.firstName;
+  // });
+
+  // return listaMapeada.forEach((userForEach) => console.log(`${userForEach} vc pode dirigir`));
+
+// };
+
+console.log(' send email', sendEmail(users2)); // último é undefined pois o each não tem retorno
 
 
 
