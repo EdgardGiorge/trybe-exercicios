@@ -21,3 +21,27 @@ const userInfos = {
 const { name, age, nationality, profession, squad, squadInitials } = userInfos;
 
 console.log(`Hi, my name is ${name}, I'm ${age} years old and I'm ${nationality}. I work as a ${profession} and my squad is ${squadInitials}-${squad}`);
+
+//objects destructuring - AO VIVO
+
+/* eslint-disable max-len */
+const pessoa = {
+  nome: 'Ronad',
+  idade: 18.5,
+  profissao: {
+    cargo: 'pessoa instrutora',
+    tempo: '9 meses',
+    empresa: 'Trybe',
+  },
+};
+
+// Imprima a frase "Meu nome é 'nome', tenho 'idade' anos e trabalho na 'empresa' como 'cargo' a 'tempo'."
+
+console.log(`Meu nome é ${pessoa.nome}, tenho ${pessoa.idade} anos e trabalho na ${pessoa.profissao.empresa} como ${pessoa.profissao.cargo} a ${pessoa.profissao.tempo}.`);
+
+const { nome: apelido, idade, profissao: { tempo, cargo, empresa } } = pessoa;
+// const  = profissao;
+
+
+
+console.log(`Meu nome é ${apelido}, tenho ${idade} anos e trabalho na ${empresa} como ${cargo} a ${tempo}.`);
