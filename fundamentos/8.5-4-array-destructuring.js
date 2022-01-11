@@ -31,3 +31,15 @@ console.log(numerosPares); // [6, 8, 10, 12];
 [,,, ...numerosPares] = numerosPares;
 
 console.log(numerosPares); // [6, 8, 10, 12];
+
+//objects destructuring - AO VIVO
+
+const names = ['Joel', 'Ana', 'Hugo', 'Mica', 'Joicy'];
+
+const [,, especialista, facilitacao, instrucao2 = "Ronald"] = names;
+
+// console.log(instrucao);
+// console.log(softSkills);
+console.log(especialista);
+console.log(facilitacao);
+console.log(instrucao2);
