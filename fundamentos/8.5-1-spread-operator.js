@@ -22,3 +22,56 @@ const fruitSalad = (fruit, additional) => {
 
 console.log(fruitSalad(specialFruit, additionalItens));
 
+//spread operator AO VIVO
+
+//spread operator em array
+// Crie um array com todos os elementos dos dois arrays abaixo:
+
+const horrorBooks = ['It', 'The Shining'];
+const scifiBooks = ['I, Robot', 'Caves of Steel', 'The End of Eternity'];
+
+// loop
+
+const generoLivros = (array1, array2) => {
+  const arrayAux = [];
+  array1.forEach((livro) => arrayAux.push(livro));
+  array2.forEach((livro) => arrayAux.push(livro));
+  return arrayAux;
+};
+console.log('array com loop', generoLivros(horrorBooks, scifiBooks));
+
+// spread
+const generoLivroSpread = [...scifiBooks, ...horrorBooks];
+
+console.log('array com spread', generoLivroSpread);
+
+//spread operator em Objetos , nos objetos que estiverem a chave com o mesmo nome ele sobrescrevbe
+
+// crie um objeto como a junção dos objetos abaixo
+
+const pessoa = {
+  nome: 'Ronald',
+  idade: 18.5,
+};
+const nota = {
+  Js: 7.5,
+  Css: 7,
+  nome: 8,
+};
+
+const novoObjeto = { ...pessoa, ...nota };
+
+console.log(novoObjeto);
+
+
+//spread operator em números
+
+// crie uma função de soma que some 3 elementos
+
+const numeros = [2, 3, 4];
+
+const soma = (a, b, c = 0, d = 0) => a + b + c + d;
+
+console.log(soma(numeros[0], numeros[1], numeros[2]));
+console.log(soma(...numeros));
+

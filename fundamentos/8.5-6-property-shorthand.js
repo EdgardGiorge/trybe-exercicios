@@ -13,7 +13,7 @@ const getPosition = (latitude, longitude) => ({
 
 console.log(getPosition(-19.8157, -43.9542));
 
-// property shorthand
+// property shorthand -  AO VIVO
 //forma curta de escrever um objeto
 const nome = 'Ronald';
 const sobrenome = 'Lima';
