@@ -74,4 +74,3 @@ const soma = (a, b, c = 0, d = 0) => a + b + c + d;
 
 console.log(soma(numeros[0], numeros[1], numeros[2]));
 console.log(soma(...numeros));
-
