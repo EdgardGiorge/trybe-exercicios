@@ -36,10 +36,11 @@ console.log(numerosPares); // [6, 8, 10, 12];
 
 const names = ['Joel', 'Ana', 'Hugo', 'Mica', 'Joicy'];
 
-const [,, especialista, facilitacao, instrucao2 = "Ronald"] = names;
+// const [,, especialista, facilitacao, instrucao2 = "Ronald"] = names; as vírgulas servem pra pular elementos, no caso o especialista é o Hugo.
+const [instrucao, softSkills, especialista, facilitacao, instrucao2 = "Ronald"] = names; // ele sobrescreve o Ronald pela Joicy
 
-// console.log(instrucao);
-// console.log(softSkills);
+console.log(instrucao);
+console.log(softSkills);
 console.log(especialista);
 console.log(facilitacao);
 console.log(instrucao2);
