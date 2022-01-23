@@ -1,5 +1,5 @@
-require('./9.6-2-fetch-simulator');
-const { getGitHubUserInfos } = require('./9.6-2-ao-vivo');
+require('./9.3-2-fetch-simulator');
+const { getGitHubUserInfos } = require('./9.3-2-ao-vivo');
 
 const expected = {
   name: 'Hugo Ferreira',
