@@ -25,6 +25,8 @@ function App() {
 
 export default App; */
 
+// INTRODUÇÃO AO REACT
+
 /* Para fixar tudo o que você aprendeu siga os passos à seguir para criar o seu primeiro componente React de classe:
 1- Crie um novo projeto utilizando npx create-react-app nome-app
 ⚠️ Substitua o nome-app pelo que você desejar para seu app ⚠️
@@ -37,9 +39,20 @@ Lembre-se, quando vamos retornar mais de um elemento é preciso que eles estejam
  import logo from './logo.svg';
  import './App.css';
  import MinhaDescricao from './MinhaDescricao';
+ //Exerc. de fixação do Cap. Componentes React - Props:
+ import Image from './Image';
+
+
 
 function App() {
-  return (<MinhaDescricao />);
+  return (
+    <div>
+      <MinhaDescricao />
+      <main>
+        <Image source='https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg' alternativeText="Cute cat string" />
+      </main>
+    </div>
+  );
 }
 
 
@@ -202,5 +215,20 @@ Solução - Footer.jsx:
         }
       }
 
-      export default Footer; */      
+      export default Footer; */
+      
+
+// COMPONENTES REACT
+
+/* Agora vamos fazer este exercício de fixação!
+Crie uma aplicação React na sua máquina via create-react-app com o nome fixation-exercises-10-2 . Crie um arquivo Image.js no diretório src do projeto e copie para esse arquivo o código escrito acima. Uma vez feito isso tudo, responda:
+1- Qual o nome do componente declarado acima?
+
+Solução: Image
+
+2- Chame o componente Image , de forma que seja mostrada esta imagem, ou o texto Cute cat staring , caso a imagem não consiga ser carregada. */
+
+//Solução: verifique o arquivo Image.jsx e App.js lá nas primeiras linhas ... up
+
+
       
