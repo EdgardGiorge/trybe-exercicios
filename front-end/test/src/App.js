@@ -36,7 +36,7 @@ Lembre-se, quando vamos retornar mais de um elemento é preciso que eles estejam
 4- Importe seu componente em App.js de modo que ele seja renderizado na tela quando a aplicação for iniciada, npm start. Para isso você precisará utilizar o export default para exportar seu componente, o export default é sempre utilizado quando queremos exportar apenas um elemento de um arquivo, seja uma função, um componente ou uma variável. A penúltima linha do arquivo Component.js deverá ficar da seguinte forma:
 5- Execute sua aplicação, npm start , e verifique se tudo ocorreu como o esperado. Ao finalizar esse exercício você terá feito o seu primeiro componente React de classe. Parabéns 🎉 */
 
- import logo from './logo.svg';
+ //import logo from './logo.svg';
  import './App.css';
  import MinhaDescricao from './MinhaDescricao';
  //Exerc. de fixação do Cap. Componentes React - Props:
@@ -594,10 +594,14 @@ class App extends React.Component {
 
 export default App;
 
-// PropTypes, checagem de tipos
+//        PropTypes, checagem de tipos
 
 Agora você vai estudar outro importante fundamento do React : a checagem de tipos ! Imagine que você criou um componente reutilizável e que ele, para funcionar corretamente, precisa receber determinadas props de tipos específicos, caso contrário a aplicação quebrará. A checagem de tipos ajuda a prevenir cenários como esse, pois verifica os tipos das props passadas para um componente durante o desenvolvimento e levanta um warning se algo não estiver como planejado. Como deve ter notado, essa verificação previne inúmeros erros, economizando muito tempo de desenvolvimento!
 A melhor forma para compreender o uso dessa ferramenta é visualizar um exemplo prático e destrinchá-lo:
+
+antes… no terminal instalar pacotes prop-types
+npm install prop-types
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -671,3 +675,119 @@ MeuComponente.propTypes = {
 };
 */
 
+//              Aula ao vivo
+
+// arquivo App.js
+/*
+import React from "react";
+import './index.css';
+import Card from './components/Card';
+import contens from './data'
+
+
+class App extends React.Component {
+  
+  render(){
+    return (
+      <main>
+        <div>
+          <h1>Conteudo</h1>
+          <p>Acesse a agenda de cada módulo abaixo, ou continue aprendendo com nossas aulas ao vivo e trilha de Soft Skills.</p>
+          <section> 
+            {
+              contens.map(item => {
+                return <Card key={item.title} itemInfo={item}  />
+              })
+            }
+          </section>
+        </div>
+      </main>
+    );
+  }
+}
+
+export default App;
+
+// arquivo data.js
+
+import React from 'react';
+import PropTypes from 'prop-types';
+//QUERO RECEBER INFORMACOES
+
+class Card extends React.Component {
+    render(){
+        //PROPS => OBJETO
+        const {itemInfo} = this.props
+        const {imageUrl, name, title} = itemInfo;
+
+        //const {itemInfo : {imageUrl, name, title}} = this.props;
+        return(
+          <article>
+            <img src={imageUrl}/>
+            <h3>{name}</h3>
+            <h2>{title}</h2>
+          </article>
+        )
+    }
+}
+
+Card.propTypes = {
+    itemInfo: PropTypes.shape({
+        imageUrl: PropTypes.string,
+        name: PropTypes.string,
+        title: PropTypes.string
+    })
+}
+
+export default Card;
+
+// arquivo Card.js
+
+const contents = [
+    {
+      id: 1,
+      name: "Modulo 1",
+      title: "Fundamentos",
+      imageUrl: "https://app.betrybe.com/static/media/fundamentals.d4ce6da9.svg",
+      isLarge: false
+    },
+    {
+      id: 2,
+      name: 2,
+      title: "Front-end",
+      imageUrl: "	https://app.betrybe.com/static/media/front-end.3f3c4418.svg",
+      isLarge: false
+    },
+    {
+      id: 3,
+      name: "Modulo 3",
+      title: "Back-end",
+      imageUrl: "https://app.betrybe.com/static/media/back-end.a979af1a.svg",
+      isLarge: false
+    },
+    {
+      id: 4,
+      name: "Modulo 4",
+      title: "Ciência da computação",
+      imageUrl:
+        "https://app.betrybe.com/static/media/computer-science.7ae26ddf.svg",
+      isLarge: false
+    },
+    {
+      id: 5,
+      name: "Modulo 5",
+      title: "SoftSkills",
+      imageUrl: "	https://app.betrybe.com/static/media/soft-skills.756af71b.svg",
+      isLarge: true
+    },
+    {
+      id: 6,
+      name: "Modulo 6",
+      title: "Aulas ao vivo",
+      imageUrl: "https://app.betrybe.com/static/media/live-lectures.500f6512.svg",
+      isLarge: true
+    }
+  ];
+  
+  export default contents;
+  */  
