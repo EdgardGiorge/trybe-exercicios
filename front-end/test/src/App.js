@@ -790,4 +790,268 @@ const contents = [
   ];
   
   export default contents;
-  */  
+  */
+ 
+ //       Exercícios Componentes React
+ /* Você vai implementar de forma simplificada uma Pokedex!! Para os que não estão familiarizados com o universo Pokemon , a Pokedex é uma enciclopédia de todos os pokemons na natureza. Para o seu caso, a sua aplicação precisa mostrar todos os pokemons presentes no arquivo data.js mencionado acima.
+ Você pode usar a imaginação para estilizar a sua aplicação. Entretanto, é obrigatório que você pelo menos implemente estes dois componentes:
+ 1- Pokemon : como o próprio nome diz, esse componente representa um pokemon. Esse componente recebe como entrada um objeto que contém informações referentes a um pokemon específico. Esse componente precisa retornar as seguintes informações obrigatórias para serem mostradas para quem usar a aplicação, essas informações devem ser validadas utilizando PropTypes:
+ a) nome do pokemon;
+ b) tipo do pokemon;
+ c) peso médio do pokemon, acompanhado da unidade de medida usada;
+ d) imagem do pokemon.
+ 
+ 2- Pokedex : esse componente representa a enciclopédia de pokemons. Esse componente recebe como entrada uma lista de pokemons para serem mostrados na tela. Para cada um desses pokemons recebidos, Pokedex chama o componente Pokemon .
+ Segue uma sugestão de implementação da aplicação:
+ Gif exibindo uma sugestão de implementação da aplicação my-pokedex.
+
+ // Solução:
+
+Gabarito do exercício
+É mostrada, em sequência, uma sugestão de implementação da aplicação, em que todas as modificações efetuadas se encontram dentro do diretório ./my-pokedex/src , onde my-pokedex é o nome do projeto criado com create-react-app .
+Hey! Está com dúvida de como iniciar? Segue uma dica que pode ser útil e tente novamente fazer o exercício.
+Que tal começar trabalhando no App.js importando o array de pokemons?
+arquivo ./my-pokedex/src/data.js:
+
+const pokemons = [
+  {
+      id: 25,
+      name: "Pikachu",
+      type: 'Electric',
+      averageWeight: {
+          value: 6.0,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Pikachu_(Pok%C3%A9mon)"
+  },
+  {
+      id: 4,
+      name: "Charmander",
+      type: 'Fire',
+      averageWeight: {
+          value: 8.5,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/0/0a/Spr_5b_004.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Charmander_(Pok%C3%A9mon)"
+  },
+  {
+      id: 10,
+      name: "Caterpie",
+      type: 'Bug',
+      averageWeight: {
+          value: 2.9,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/8/83/Spr_5b_010.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Caterpie_(Pok%C3%A9mon)"
+  },
+  {
+      id: 23,
+      name: "Ekans",
+      type: 'Poison',
+      averageWeight: {
+          value: 6.9,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/1/18/Spr_5b_023.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Ekans_(Pok%C3%A9mon)"
+  },
+  {
+      id: 65,
+      name: "Alakazam",
+      type: 'Psychic',
+      averageWeight: {
+          value: 48.0,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/8/88/Spr_5b_065_m.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Alakazam_(Pok%C3%A9mon)"
+  },
+  {
+      id: 151,
+      name: "Mew",
+      type: 'Psychic',
+      averageWeight: {
+          value: 4.0,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/4/43/Spr_5b_151.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Mew_(Pok%C3%A9mon)"
+  },
+  {
+      id: 78,
+      name: "Rapidash",
+      type: 'Fire',
+      averageWeight: {
+          value: 95.0,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/5/58/Spr_5b_078.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Rapidash_(Pok%C3%A9mon)"
+  },
+  {
+      id: 143,
+      name: "Snorlax",
+      type: 'Normal',
+      averageWeight: {
+          value: 460.0,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/f/fd/Spr_4p_143_s.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Snorlax_(Pok%C3%A9mon)"
+  },
+  {
+      id: 148,
+      name: "Dragonair",
+      type: 'Dragon',
+      averageWeight: {
+          value: 16.5,
+          measurementUnit: "kg"
+      },
+      image: "https:\/\/cdn2.bulbagarden.net/upload/2/2c/Spr_5b_148.png",
+      moreInfo: "https:\/\/bulbapedia.bulbagarden.net/wiki/Dragonair_(Pok%C3%A9mon)"
+  }
+];
+
+export default pokemons;
+
+// arquivo ./my-pokedex/src/App.js:
+
+import React from 'react';
+import './App.css';
+import pokemons from './data';
+//Import do json criado com os pokemons e seus dados.
+import Pokedex from './Pokedex';
+
+class App extends React.Component {
+render() {
+  return (
+    <div className="App">
+      <h1> Pokedex </h1>
+      <Pokedex pokemons={pokemons} />
+      // No arquivo App.js, estamos renderizando o componente da Pokedex.
+      // Criamos a prop "pokemons", e nela chamamos o nosso json "pokemons",
+      // pokemons={} é a nossa prop e o valor dentro das {} é o nosso json,
+      // ou seja nomeDaProps={valorDaProps}, o nome da props é o que foi passado
+      // dentro do componente Pokedex.
+      // O valor da props, vem o import que fizemos na linha 3 do arquivo data.js
+      // pois desta forma poderemos trabalhar com esses dados via "props".
+      // Uma informação importante é que podemos dar qualquer nome a uma prop,
+      // mas atente-se para que seja um nome descritivo.
+    </div>
+  );
+}
+
+}
+
+export default App;
+
+E aí, conseguiu dar o primeiro passo, mas ainda se sente perdido? Tente isso:
+
+// arquivo ./my-pokedex/src/Pokedex.js:
+
+import React from 'react';
+import Pokemon from './Pokemon';
+
+class Pokedex extends React.Component {
+    render() {
+      const { pokemons } = this.props;
+      // Recebemos do App.js, através da props "pokemons", o nosso array de pokemons.
+      // Devemos fazer um map, e nele renderizar o componente <Pokemon>, que receberá
+      // por props cada item do array.
+      // Lembre-se: é no componente Pokemon que iremos
+      // renderizar todas as informações necessárias para a exibição.
+        return (
+            <div className="pokedex">
+                {pokemons.map(pokemon => <Pokemon key={pokemon.id} pokemon={pokemon} />)}
+            </div>
+        );
+    }
+}
+
+export default Pokedex;
+
+// arquivo ./my-pokedex/src/Pokemon.js:
+
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class Pokemon extends React.Component {
+  render() {
+    const { pokemon: { name, type, averageWeight, image } } = this.props;
+    // Fizemos um map no nosso array de pokemons
+    // que vai renderizar o componente Pokemon para cada item do array.
+    // Então, recebemos a props "pokemon" que é um objeto do array de pokemons
+    // Nesses objetos temos informações como name, type e etc, então
+    // desestruturamos essas informações e renderizamos em uma tag HTML,
+    // no caso, utilizamos um <p>.
+
+    return (
+      <div className="pokemon">
+        <div>
+          <p>{ name }</p>
+          <p>{ type }</p>
+          <p>
+            {`Average weight: ${averageWeight.value} ${averageWeight.measurementUnit}`}
+          </p>
+        </div>
+        <img src={ image } alt={ `${name} sprite` } />
+      </div>
+    );
+  }
+}
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string,
+    type: PropTypes.string,
+    averageWeight: PropTypes.shape({
+      measurementUnit: PropTypes.string,
+      value: PropTypes.number,
+    }),
+    image: PropTypes.string,
+  }).isRequired,
+};
+
+export default Pokemon;
+
+Chegamos na parte final do exercício! Não se preocupe se foi preciso olhar o gabarito para visualizar o que precisava ser feito! Mas não se esqueça de refazer o exercício para fixar o conteúdo!
+Caso você não queira se aventurar no css , deixamos um pronto pra você! ;)
+
+// arquivo ./my-pokedex/src/App.css:
+
+.App {
+  text-align: center;
+}
+
+// arquivo ./my-pokedex/src/index.css:
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1 1 0;
+  min-width: 25%;
+  margin: 10px 10px;
+  border: 1px gray solid;
+  border-radius: 10px;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
+*/
