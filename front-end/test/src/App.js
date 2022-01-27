@@ -708,7 +708,7 @@ class App extends React.Component {
 
 export default App;
 
-// arquivo data.js
+// arquivo Card.js
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -741,7 +741,7 @@ Card.propTypes = {
 
 export default Card;
 
-// arquivo Card.js
+// arquivo data.js
 
 const contents = [
     {
