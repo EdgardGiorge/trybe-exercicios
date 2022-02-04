@@ -41,13 +41,13 @@ Lembre-se, quando vamos retornar mais de um elemento é preciso que eles estejam
  import MinhaDescricao from './MinhaDescricao';
  //Exerc. de fixação do Cap. Componentes React - Props:
  import Image from './Image';
-
-
+ import Form from './Form'
 
 function App() {
   return (
     <div>
       <MinhaDescricao />
+      <Form />
       <main>
         <Image source='https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg' alternativeText="Cute cat string" />
       </main>
