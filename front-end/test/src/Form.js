@@ -295,3 +295,81 @@ class Form extends Component {
 }
 
 export default Form;
+
+/*              Aula ao vivo
+Para não precisar criar um componente para cada input, pode se criar um componente padrão pra quase todos os componentes... exemplo da aula ao vivo
+
+<Login.js> (pai)
+
+import React from 'react';
+import Input from './Input';
+
+class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: 'murillo',
+      password: '',
+    };
+  }
+
+  handleChange = ({ target: { value, name } }) => {
+    this.setState({ [name]: value });
+  }
+
+  render() {
+    const { password, email, message } = this.state;
+    return (
+      <section>
+        <h2>Login</h2>
+        <form>
+          <Input
+            name="email"
+            value={ email }
+            type="email"
+            onInputChange={ this.handleChange }
+          />
+          <Input
+            name="password"
+            value={ password }
+            type="password"
+            onInputChange={ this.handleChange }
+          />
+          <Input
+            name="message"
+            value={ message }
+            type="text"
+            onInputChange={ this.handleChange }
+          />
+          <button type="submit">FAZER LOGIN</button>
+        </form>
+      </section>
+    );
+  }
+}
+
+export default Login;
+
+<Input.js> (filho)
+
+import React from 'react';
+
+class Input extends React.Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    const { value, onInputChange, name, type } = this.props;
+    return (
+      <input
+        type={ type }
+        name={ name }
+        value={ value }
+        onChange={ onInputChange }
+      />
+    );
+  }
+}
+export default Input;
+*/
