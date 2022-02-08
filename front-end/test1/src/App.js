@@ -1,13 +1,14 @@
+import { Component } from 'react';
 import './App.css';
 import Counter from './Counter';
 
-
-function App() {
+class App extends Component {
+  render() {
   return (
-    <div>
+    <div className="App">
       <Counter />
     </div>
-  );
+  )}
 }
 
 export default App;
