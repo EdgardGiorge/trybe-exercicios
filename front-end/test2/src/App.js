@@ -1115,4 +1115,6 @@ Você verá que, ao copiar esse test, o Jest retornará um erro, dizendo que o c
   import App, { About } from './App';
 Talvez você esteja se perguntando porque o App não foi importado com {} e o About foi. Isso aconteceu porque só pode haver um export default por arquivo (que faz o componente ser importável sem as chaves {} ) e o App tomou esse espaço, então os outros componentes exportados ficam em "segundo plano". Por isso, para serem importados corretamente, necessitam do {} .
 Para ver a diferença entre a renderização da aplicação inteira e de apenas um componente, cause um erro nos testes, alterando o que é esperado no getByRole dos testes. Você verá que, ao importar apenas o componente, toda a estrutura ao redor dele não é renderizada. No nosso caso de exemplo, os links do topo não são renderizados.
+
+- fazer exercícios de tests
 */
