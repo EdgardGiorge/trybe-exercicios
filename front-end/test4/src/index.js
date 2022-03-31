@@ -367,4 +367,157 @@ excalidraw da aula ao vivo:
 
 https://excalidraw.com/#json=2b5ULY9KVvTgtam4bLH05,zV1QATOoSY93qLbB0XcYwg
 
+                
+              17/03 - 17.2 - React Hooks - useState e useContext
+
+O que vamos aprender?
+Existem dois jeitos de se criar um componente React. Você pode definir uma classe que estende React.Component ou você pode definir uma função que retorna o que é renderizado.
+Qual é a diferença entre essas duas formas? A classe te dá muito mais ferramentas , mas é mais complicada de se criar. Você pode definir estados, acessar contextos, usar métodos de ciclo de vida de componente etc. Mas você precisa, também, fazer bind nas funções que não forem arrow functions e que deseja passar como callbacks para outros componentes, além de ser necessário definir um construtor, caso você utilize estado ou métodos de ciclo de vida. Dessa forma, na hora de separar lógica em vários componentes e reutilizá-la, a complexidade da aplicação tende a aumentar muito rápido.
+Assim sendo, por vezes seria ótimo fazer algo mais simples , como um componente funcional, mas utilizando estados, contextos e tudo o mais . Pois bem! Os React Hooks vêm pra resolver esses problemas! Com eles, fazer componentes complexos é mais simples , mais rápido e fica mais fácil de compartilhar e agrupar suas lógicas.
+Você será capaz de:
+Utilizar o React Hook useState;
+Utilizar o React Hook useContext.
+Por que isso é importante?
+React Hooks são uma das mais modernas formas de se trabalhar lógicas complexas em componentes React. Eles têm adoção crescente na comunidade, resolvem problemas que a criação de componentes com classes traz e facilitam muito a vida de quem quer criar componentes, muitas vezes, mais simples. Eles são uma ferramenta fundamental para quem desenvolve ter em seu portfólio!
+Conteúdos
+Você já deve ter notado que sempre que uma nova aplicação React é criada, o App.js vem como um componente funcional e se você precisar usar um estado ou um ciclo de vida dentro dele, é necessário mudar todo seu componente pra classe, e junto com ela vinha constructor, super(), render(), this, binds... 😖
+Não seria muito melhor se pudessemos deixar as classes de lado e usar uma função que fosse capaz de utilizar estados e ciclo de vida de forma simples e muito menos verbosa?? Com a chegada dos Hooks na versão 16.8.0 do React isso se tornou possível!
+(ノಥ,_｣ಥ)ノ彡 React.Component 🗑
+function ヾ(Ő‿Ő✿)
+
+useState
+
+O useState é o hook mais comum e ele permite que você utilize o state e outros recursos do React sem escrever uma classe. Para entender melhor do que estamos falando, veja este componente com Estado feito com uma classe e em seguida o mesmo componente feito com hooks :
+
+
+import React, { Component } from "react";
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0,
+    };
+  }
+
+  render() {
+    const { counter } = this.state
+
+    return (
+      <div>
+        <div>Counter: {counter}</div>
+        <button
+          type="button"
+          onClick={() =>
+            this.setState((prevState) => ({ counter: prevState.counter + 1 }))
+          }
+        >
+          Increase Counter
+        </button>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+Vamos agora criar esse mesmo componente usando função e utilizar hooks para entender como o useState funciona:
+
+import React, { useState } from "react";
+
+function App() {
+  const [counter, setCounter] = useState(0);
+  return (
+    <div>
+      <div>Counter: {counter}</div>
+      <button type="button" onClick={() => setCounter(counter + 1)}>
+        Increase Counter
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+ a) Aprimeira mudança é que não é mais necessário importar o Component , somente o useState .
+b) O constructor , junto com o super e o this.state também foram removidos. Ao invés disso foi adicionado o useState: O counter é o valor do estado, o setCounter é a função que será usada para definir novos valores ao estado e o useState(0) é onde você adiciona o valor inicial do seu estado, neste caso 0 . E repare que não precisamos nos preocupar em como atualizar um estado com base no estado anterior! Essa lógica funciona de forma transparente.
+c) Nosso event handler onClick também mudou. No lugar de this.setState temos somente a chamada da função setCounter definida anteriormente, recebendo como parâmetro o novo valor de counter , neste caso counter + 1 .
+Observe que tanto this.setState quanto setCounter possuem o objetivo de atualizar o estado do componente. Da mesma forma que valores atualizados por this.setState acontecem de forma assíncrona, mudanças utilizando setCounter também não são instantâneas.
+A função setCounter recebe um novo valor para o estado e coloca na fila de re-renderização do componente. Na próxima vez que o componente for re-renderizado o valor retornado por useState será o estado atualizado. Você pode ler a documentação do useState para saber mais.
+Com o useState , no lugar de ter todos os estados do componente dentro de um grande objeto, teremos um useState diferente para cada valor de estado que estiver sendo utilizado.
+
+useContext
+
+
+O useContext é o hook que vai te ajudar a trabalhar com a Context API . Ele funciona como um Consumer , mas de uma forma muito menos complexa e que torna seu código bem mais legível!
+Assim como seria feito utilizando o Consumer , vamos fazer um setup inicial para podermos utilizar o useContext :
+Primeiro criamos o Context:
+
+
+import { createContext } from 'react';
+
+const AppContext = createContext();
+
+export default AppContext;
+
+Em seguida criamos o Provider:
+
+
+import React, { useState } from 'react';
+import AppContext from './AppContext';
+
+function Provider({ children }) {
+  const [stateA, setStateA] = useState('initialStateA');
+  const [stateB, setStateB] = useState('initialStateB');
+  const contextValue = {
+    stateA,
+    setStateA,
+    stateB,
+    setStateB,
+  };
+
+  return (
+    <AppContext.Provider value={contextValue}>
+      {children}
+    </AppContext.Provider>
+  );
+}
+
+export default Provider;
+
+Com o Context e o Provider criados, precisamos adicionar o Provider à aplicação:
+
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import App from './App'
+import Provider from '../utils/Provider'
+
+ReactDOM.render(
+  <Provider>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+
+Com o setup concluído, podemos utilizar o estado criado no Provider em qualquer componente que for necessário utilizando o useContext . Pra isso, precisamos importar o Context e o useContext:
+
+import React, { useContext } from 'react';
+import AppContext from '../utils/AppContext';
+
+const ComponenteX = () => {
+  const { stateA, setStateA, stateB } = useContext(AppContext);
+
+  return (
+    <div>
+      <p>{stateA}</p>
+      <p>{stateB}</p>
+      <button onClick={() => setStateA("newState")}>Click</button>
+    </div>
+  );
+};
+
+export default ComponenteX;
+
 */
