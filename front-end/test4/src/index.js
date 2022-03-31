@@ -520,4 +520,101 @@ const ComponenteX = () => {
 
 export default ComponenteX;
 
+                  21/03 - 17.3 - React Hooks - useEffect e Hooks customizados
+
+O que vamos aprender?
+Hoje você vai continuar a aprender React Hooks ! Na última aula, você estudou o useState e o useContext . Pois bem. A proposta dos hooks é, lembre-se, trazer a componentes funcionais tudo o que componentes de classe fornecem. Para isso, um passo importante é ter as funcionalidades providas pelos Lifecycle methods : componentDidMount , componentWillUnmount , componentDidUpdate . Para esses três comportamentos, temos um único hook: o useEffect !
+Além disso, na aula de hoje, você vai ver o básico sobre criar seus próprios hooks personalizados - o que vai te permitir deixar seu código mais limpo e legível e usar hooks diversos disponibilizados online por outras pessoas.
+
+Você será capaz de:
+Utilizar o React Hook useEffect ;
+Criar Hooks customizados.
+Por que isso é importante?
+De posse do conhecimento acerca do useEffect e dos Hooks customizados, você terá em mãos as ferramentas para criar componentes funcionais com tudo que os componentes de classe têm. Seu código ficará mais legível, mais sucinto e mais fácil de se entender, e o caminho para o domínio completo dos React Hooks estará aberto.
+
+useEffect
+
+Uma das ferramentas mais interessantes do React é a possibilidade de manipulação dos ciclos de vida de seus componentes. Até o momento, estas alterações eram feitas através dos lifecycle methods , conhecidos como componentDidMount , componentDidUpdate e componentWillUnmount .
+O hook useEffect foi desenvolvido para ser uma função que pode ser executada em diferentes momentos do ciclo de vida dos componentes de forma semelhante aos três métodos. A documentação do ReactJS se refere à esta ferramenta da seguinte forma:
+Se você tem familiaridade com métodos de ciclo de vida de React, você pode entender o hook useEffect como uma junção de componentDidMount, componentDidUpdate e componentWillUnmount (Tradução livre).
+O hook Effect leva este nome por lidar com os efeitos colaterais que são produzidos na aplicação diante de um evento ou variável que precisa ser observada, seja ele a montagem do componente, a alteração de um estado ou a desmontagem de um componente.
+Para que isso aconteça o hook recebe, geralmente, dois parâmetros, que são uma callback e um array:
+
+useEffect(() => {}, []);
+
+A função será executada de acordo com o que especificarmos como segundo parâmetro. Vamos estudar a fundo cada caso:
+Temos uma função e não temos um array:
+
+    useEffect(() => {});
+
+Esta configuração executará a função toda vez que o componente sofrer qualquer tipo de alteração e renderizar, **repetidas vezes**. Ela precisa ser utilizada com **cautela**, pois facilmente resulta em **loops infinitos**.
+
+Temos uma função e um array vazio:
+
+    useEffect(() => {}, []);
+
+Neste caso, a função será executada similarmente ao `componentDidMount`, rodando apenas uma vez e na montagem do componente.
+
+Temos uma função, e um array com um ou mais parâmetros:
+
+    useEffect(() => {}, [variável1, variável2, ... variávelN]);
+
+O comportamento deste modelo será semelhante ao `componentDidUpdate` e ele será executado sempre que houver mudança em alguma das variáveis especificadas.
+
+Temos uma função retornando uma outra função, e o segundo parâmetro pode conter um array populado ou não.
+
+    useEffect(() => {
+
+      return () => {}
+    }, []);
+
+Este caso é mais específico, pois ele pode agregar a utilização de um dos dois últimos exemplos, o `componentDidMount` ou `componentDidUpdate` dependendo do segundo parâmetro, e a função presente no retorno se comporta como `componentWillUnmount`. Ou seja, quando o componente desmonta a função retornada pelo `useEffect` é executada. Você deve definir essa função sempre que precisar limpar algo criado por seu efeito (como algum _timer_, por exemplo)
+
+Hooks customizados
+
+Agora, vamos ver como podemos fazer um Hook Customizado.
+
+Muitas vezes precisamos utilizar o mesmo trecho de código em dois locais diferentes. Com hooks não será diferente e, para ajudar nesta questão, podemos criar um hook customizado.
+Para exemplificar, vamos criar uma função que possui dentro dela os hooks tradicionais. Dessa forma, o estado criado pela useState e a função useEffect serão reconhecidas e utilizadas no componente em que a hook customizada for chamada.
+Vamos criar um template padrão de uma hook customizada básica, somente com useState :
+
+function useHookCustomizada(defaultValue) {
+  const [variavel, setVariável] = useState(defaultValue);
+
+  return variavel;
+}
+
+Agora podemos chamar a nossa função useHookCustomizada para definir o estado da variavel no escopo de diferentes componentes.
+Vamos adicionar uma função useEffect ao exemplo anterior, modificando ele para receber um fetch qualquer:
+
+function useHookCustomizada(defaultValue) {
+  const [data, setData] = useState(defaultValue);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('url')
+    .then((response) => response.json())
+    .then((data) => {
+      setData(data);
+      setLoading(false);
+    });
+  }, []);
+
+  return data;
+}
+
+Dessa forma, podemos utilizar novamente nossa hook customizada, e ela deverá setar o estado e realizar um fetch para preencher a nossa variável com dados de um API, por exemplo.
+É importante destacar que é completamente possível adicionar mais parâmetros à função que constrói o nosso hook e usá-los no escopo dele. Além disso, como visto no último exemplo, podemos adicionar quantos useEffect e useState quisermos.
+É definido por convenção que, ao se construir um hook customizado, se utilize a nomenclatura use antes do nome da função que vai manipular as hooks tradicionais.
+Achou interessante?! Pois bem. Vamos resumir os conceitos aprendidos:
+O useEffect executa, quando disparado, a função que recebe como primeiro parâmetro;
+Se não receber um segundo parâmetro, ele executa a função sempre que o componente é renderizado;
+Se receber um array vazio como segundo parâmetro, ele executa a função somente quando o componente é montado;
+Quando ele recebe um array com valores dentro, sempre que algum desses valores é alterado, a função é executada (lembrando que os valores passados no array devem ser estados);
+Se ele retorna uma função, essa função é executada quando o componente é desmontado e também antes da próxima renderização.
+É importante ressaltar que podem ser utilizados mais de um useEffect por componente. Desta forma, pode-se observar tanto a primeira renderização, quanto diferentes parâmetros, em diferentes hooks useEffect. Isso permite termos um hook para cada parte da sua lógica, de forma a organizar seu código da maneira como for melhor!
+Vamos ver este vídeo para fixar melhor o conteúdo e vermos outros exemplos na prática:
+
+https://youtu.be/V889MSVKk5Y
 */
