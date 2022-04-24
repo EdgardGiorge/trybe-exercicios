@@ -1,0 +1,29 @@
+#Este arquivo é onde conseguimos especificar todos os parâmetros que antes fazíamos manualmente (quando utilizávamos o docker container run). Também serve para a criação de nossos volumes, redes e coisa do tipo
+version: '3' #versão que iremos utilizar
+services: #onde definimos os container/imagens
+  db:
+    image: mysql:5.7
+    volumes: #mapear a pasta onde fica os dados do mysql para um volume na nossa máquina
+      - db_data:/var/lib/mysql #onde db_data é o volume que irei criar abaixo e vou colocar os dados do meu container da pasta /var/lib...
+    restart: always # caso de algum um erro no meu container ou ele acabe a execução ele volta a funcionar de maneira automática
+    environment: #definir as variáveis de ambiente com as informações de login e senha do nosso banco de dados
+      MYSQL_ROOT_PASSWORD: wordpress #neste caso são parâmetros que o próprio mysql pede
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on: #para que meu wordpress seja criado, primeiro tem que se criar um banco de dados, então o serviço wordpress depende do serviço chamado db
+      - db
+    image: wordpress:latest #A imagem que vou usar na última versão
+    ports:
+      - "8000:80" #meu container irá rodar na porta 8000 e irei fazer um bind pra porta 80 do meu container
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306 # configurar as minhas variáveis de ambiente porque eu preciso dizer para o wordpress, quem é meu banco de dados, qual o login e senha
+      WORDPRESS_DB_USER: wordpress #onde db é o nosso serviço daqui de cima, a porta 3306 é a porta padrão do mysql
+      WORDPRESS_DB_PASSWORD: wordpress #passei o usuário e senha que foi passado acima
+volumes: #Criar o volume
+  db_data:
+
+#para colocar o serviço no ar, basta irmos ao terminal e digirar docker-compose up ele criará os dois container e também aparecerá os logs do container db_1 e wordpress_1, agora acesse o navegador no localhost:8000 pra ver se esta funcionando o wordpress e comunicando com o banco de dados   
