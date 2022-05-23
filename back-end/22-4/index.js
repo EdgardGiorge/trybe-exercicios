@@ -25,6 +25,9 @@ Vamos começar implementando o endpoint que retorna a lista de receitas na rota 
 const express = require('express');
 const bodyParser = require('body-parser');
 const authMiddleware = require('./auth-middleware');
+const cors = require('cors');
+
+app.use(cors());
 
 const app = express();
 app.use(bodyParser.json());
@@ -34,6 +37,37 @@ app.get('/open', function (req, res) {
 });
 
 app.use(authMiddleware);
+
+// ...
+function validateName(req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!'});
+
+  next();
+};
+
+app.post('/recipes', validateName, function (req, res) {
+  const { id, name, price } = req.body;
+  const { username } = req.user; // Aqui estamos acessando o usuário encontrado no middleware de autenticação.
+  recipes.push({ id, name, price, chef: username });
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
+app.put('/recipes/:id', validateName, function (req, res) {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const recipesIndex = recipes.findIndex((r) => r.id === parseInt(id));
+
+  if (recipesIndex === -1)
+    return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes[recipesIndex] = { ...recipes[recipesIndex], name, price };
+
+  res.status(204).end();
+});
+// ...
+
+
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
