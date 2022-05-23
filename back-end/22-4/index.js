@@ -24,9 +24,16 @@ Vamos começar implementando o endpoint que retorna a lista de receitas na rota 
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
+const authMiddleware = require('./auth-middleware');
 
+const app = express();
 app.use(bodyParser.json());
+
+app.get('/open', function (req, res) {
+  res.send('open!')
+});
+
+app.use(authMiddleware);
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
