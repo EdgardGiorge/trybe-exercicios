@@ -27,10 +27,10 @@ const bodyParser = require('body-parser');
 const authMiddleware = require('./auth-middleware');
 const cors = require('cors');
 
-app.use(cors());
-
 const app = express();
+
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/open', function (req, res) {
   res.send('open!')

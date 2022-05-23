@@ -72,7 +72,7 @@ app.use((req, _res, next) => {
 Adicionando o código acima, sempre que uma requisição http for executada, o middleware criado imprimirá no console as informações contidas no parâmetro req. Lembrando que isso só afetará as rotas que forem declaradas abaixo da definição do app.use.
 ❗Importante ressaltar que essa prática não deve ser utilizada em produção, pois serve apenas para dar visibilidade no momento do desenvolvimento.
 
-Router middleware
+                        Router middleware
 Você deve estar pensando: "Nossa! Mas, com tudo isso, meu arquivo principal vai ficar gigante!" 😱
 Calma! O Express tem uma solução bem interessante para organizar nossas rotas e middlewares: o Router.
 O Router é um middleware que "agrupa" várias rotas em um mesmo lugar, como se fosse uma versão mini do app do Express. Ele é depois "plugado" no "app principal".
