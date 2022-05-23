@@ -56,6 +56,22 @@ app.use(cors());
 Agora, qualquer requisição que você fizer de outra aplicação vai responder, pois temos o middleware cors. Caso não o tivéssemos, o navegador bloquearia as requests do nosso front-end para nossa API. O cors tem um conjunto de configurações que permitem criar regras específicas, de quem e como as requisições podem ser feitas. Por enquanto, não precisamos nos preocupar com isso já que estamos desenvolvendo aplicações apenas em ambiente de desenvolvimento. Porém é importante ter cuidado com essa configuração ao subir uma aplicação para ambiente de produção.
 Para aprofundar-se em middlewares, assista a este vídeo.
 
+            Visualizando o conteúdo das requisições no Console
+É muito comum, durante a construção de uma API, que a gente tenha dificuldade para visualizar o que está sendo feito por cada endpoint em cada requisição.
+Para resolver esse problema, é possível adicionar um middleware que imprimirá no console as informações recebidas no parâmetro req.
+Copiar
+app.use((req, _res, next) => {
+  console.log('req.method:', req.method);
+  console.log('req.path:', req.path);
+  console.log('req.params:', req.params);
+  console.log('req.query:', req.query);
+  console.log('req.headers:', req.headers);
+  console.log('req.body:', req.body);
+  next();
+});
+Adicionando o código acima, sempre que uma requisição http for executada, o middleware criado imprimirá no console as informações contidas no parâmetro req. Lembrando que isso só afetará as rotas que forem declaradas abaixo da definição do app.use.
+❗Importante ressaltar que essa prática não deve ser utilizada em produção, pois serve apenas para dar visibilidade no momento do desenvolvimento.
+
 
 */
 
