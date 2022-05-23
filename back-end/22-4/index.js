@@ -208,7 +208,7 @@ app.get('/langs', (req, res) => {
 app.post('/langs', (req, res) => { //Middlewares são as funções que tratam o request e response (req, res)!
   const {name} = req.body;
   langs.push(name);
-  res.send(` ${name} da requisição adicionado com sucesso!`)
+  res.send(`O nome ${name} da requisição da rota '/langs' adicionado com sucesso!`)
 });// 3- Extraia os dados do objeto req.body que é o lugar onde encapsula todos os dados que são enviados pelo cliente, agora no navegador(no meu caso no Thunder client), execute a seguinte requisição de exemplo: recipes id:=4 name='Porpeta' price:=30 waitTime:=20
 
 /*          ATUALIZANDO E DELETANDO OBJETOS ATRAVÉS DA API
